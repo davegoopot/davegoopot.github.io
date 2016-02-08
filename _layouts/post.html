@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Dave Potts - {{ post.title }}</title>
+	<title>Dave Potts - {{ page.title }}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
@@ -20,7 +20,7 @@
 <div id="wrap">
 	<div id="header">
 		
-		<h1><a href="#">Dave Potts - {{ post.title }}</a></h1>
+		<h1><a href="#">Dave Potts - {{ page.title }}</a></h1>
 	</div>
 
 	<div id="sidebar">
@@ -36,9 +36,9 @@
 <hr>
 	
 	<article>
-		<h2>{{ post.title }}</h2>
-		<h3>{{ post.date }}</h3>
-   {{ post.content }}
+		<h2>{{ page.title }}</h2>
+		<h3>{{ page.date }}</h3>
+   {{ page.content }}
 	</article>
 
 
