@@ -3,7 +3,7 @@ layout: post
 title: Codenvy VNC Demo
 ---
 
-I've just discovered (Codenvy)[https://codenvy.com/] and it is my new favourite thing. Codenvy is the logical conclusion of the move 
+I've just discovered [Codenvy](https://codenvy.com/) and it is my new favourite thing. Codenvy is the logical conclusion of the move 
 to infrastructure virtualization. It virtualizes your whole development environment and pairs it up with a simple interface into hosted 
 Docker containers allowing you to build and even host the results of your development straight from the browser.
 
