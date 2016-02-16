@@ -7,7 +7,7 @@ li { color: #036DA7; list-style-type: none; margin-bottom: 6px; }
 #wrap { margin: 0 auto; max-width: 950px; background: #fff; }
 #header { height: 80px; background: #222; margin: 0 0 10px 0;}
 #header a { color: #fff; text-decoration: none;}
-#header h1 {color: #fff; font-size: 2em; padding: 20px 0 0 20px; font-weight: 100;}
+#header h1 {color: #fff; font-size: 2em; font-weight: 100;}
 #header h2 {color: #eee; font-size: 1.2em; padding: 0 0 0 20px; font-weight: 100;}
 #headerlinks {float: right; padding: 30px 20px 0 0;}
 #headerlinks a {color:#fff; padding: 0 10px;}
