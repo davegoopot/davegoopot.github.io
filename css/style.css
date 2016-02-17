@@ -3,7 +3,7 @@ body { background: #F5F5F5; font-family: 'Roboto Condensed', sans-serif; font-si
 img { border: none;}
 a { color: blue; text-decoration: none;}
 a:hover { color: #555; text-decoration: none;}
-li { color: #036DA7; list-style-type: none; margin-bottom: 6px; }
+li { margin-bottom: 6px; }
 #wrap { margin: 0 auto; max-width: 950px; background: #fff; }
 #header { height: 80px; background: #222; margin: 0 0 10px 0;}
 #header a { color: #fff; text-decoration: none;}
