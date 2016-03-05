@@ -5,6 +5,7 @@ a { color: blue; text-decoration: none;}
 a:hover { color: #555; text-decoration: none;}
 ol { margin-bottom: 20px; margin-left: 30px; text-align: left;}
 li { margin-bottom: 6px; }
+code { background-color: rgba(0,0,0,0.04); font-weight: bold;}
 #wrap { margin: 0 auto; max-width: 950px; background: #fff; }
 #header { height: 80px; background: #222; margin: 0 0 10px 0;}
 #header a { color: #fff; text-decoration: none;}
