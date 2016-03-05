@@ -9,16 +9,14 @@ I have a small batch process I have coded up.  It is easy enough to pass in the 
 
 Here at the steps:
 
-Install Mutt and SSMPT in the Docker runner:
-
+1. Install Mutt and SSMPT in the Docker runner:
 <pre>
 <code>
 RUN sudo apt-get install -y mutt openssl ca-certificates ssmtp
 </code>
 </pre>
 
-Create an ssmpt.conf file in my Codenvy project.  This file contains:
-
+2. Create an ssmpt.conf file in my Codenvy project.  This file contains:
 <pre>
 <code>
 root=MY-GMAIL-EMAIL-ADDRESS
@@ -32,17 +30,16 @@ FromLineOverride=YES
 </code>
 </pre>
 
-Add the config into the Docker runner:
-
+3. Add the config into the Docker runner:
 <pre>
 <code>
 COPY $src$/ssmtp.conf /etc/ssmtp/
 </code>
 </pre>
 
-Run the process to create the output file.
+4. Run the process to create the output file.
 
-Use this one-liner to email the results:
+5. Use this one-liner to email the results:
 
 <pre>
 <code>
