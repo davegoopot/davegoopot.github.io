@@ -11,12 +11,16 @@ Here at the steps:
 
 Install Mutt and SSMPT in the Docker runner:
 
-```
+<pre>
+<code>
 RUN sudo apt-get install -y mutt openssl ca-certificates ssmtp
-```
+</code>
+</pre>
 
 Create an ssmpt.conf file in my Codenvy project.  This file contains:
-```
+
+<pre>
+<code>
 root=MY-GMAIL-EMAIL-ADDRESS
 mailhub=smtp.gmail.com:587
 rewriteDomain=
@@ -25,19 +29,25 @@ UseSTARTTLS=YES
 AuthUser=MY-GMAIL-EMAIL-ADDRESS
 AuthPass=MY-GMAIL-PASSWORD
 FromLineOverride=YES
-```
+</code>
+</pre>
 
 Add the config into the Docker runner:
-```
+
+<pre>
+<code>
 COPY $src$/ssmtp.conf /etc/ssmtp/
-```
+</code>
+</pre>
 
 Run the process to create the output file.
 
 Use this one-liner to email the results:
 
-```
+<pre>
+<code>
 RUN echo Result attached. | mutt -s "Matching Results" MY-GMAIL-EMAIL-ADDRESS -a /home/user/output.xlsx
-```
+</code>
+</pre>
 
 
