@@ -1,0 +1,40 @@
+---
+layout: post
+title: Getting Results File out of Codenvy
+---
+
+I have something of a crush on [Codenvy](https://codenvy.com/), the on-demand in-your-browser development environment.  
+The main wrinkle I've encountered with Codenvy is that it is not easy to get a files out their hosted Docker environment.
+I have a small batch process I have coded up.  It is easy enough to pass in the input files.  The process runs and produces a single Excel 
+file as the output.  The way I have come up with to get at the output file is to set up the Docker runner so that it emails the 
+results to my Gmail account.
+
+Here at the steps:
+
+1. Install Mutt and SSMPT in the Docker runner
+    `RUN sudo apt-get install -y mutt openssl ca-certificates ssmtp`
+2. Create an ssmpt.conf file in my Codenvy project.  This file contains
+```
+root=MY-GMAIL-EMAIL-ADDRESS
+mailhub=smtp.gmail.com:587
+rewriteDomain=
+hostname=MY-GMAIL-EMAIL-ADDRESS
+UseSTARTTLS=YES
+AuthUser=MY-GMAIL-EMAIL-ADDRESS
+AuthPass=MY-GMAIL-PASSWORD
+FromLineOverride=YES
+```
+3. Add the config into the Docker runner
+    `COPY $src$/ssmtp.conf /etc/ssmtp/`
+    
+    
+4. Run the process to create the output file
+5. Use this one-liner to email the results
+    `RUN echo Result attached. | mutt -s "Matching Results" MY-GMAIL-EMAIL-ADDRESS -a /home/user/output.xlsx`
+
+
+
+I'm starting out with my site hosted on [GitHub Pages](https://pages.github.com/). 
+At the outset this is just me typing HTML directly into the GitHub editor. 
+I intend to follow the [instructions](https://help.github.com/articles/using-jekyll-with-pages/) to set up the built in 
+Jekyll markdown blog generator in the future.
