@@ -3,10 +3,9 @@ layout: post
 title: Getting Results File out of Codenvy
 ---
 
-I have something of a crush on [Codenvy](https://codenvy.com/), the on-demand in-your-browser development environment.  
-The main wrinkle I've encountered with Codenvy is that it is not easy to get a files out their hosted Docker environment.
-I have a small batch process I have coded up.  It is easy enough to pass in the input files.  The process runs and produces a single Excel 
-file as the output.  The way I have come up with to get at the output file is to set up the Docker runner so that it emails the 
+I have something of a crush on [Codenvy](https://codenvy.com/), the on-demand in-your-browser development environment. The main wrinkle I've encountered with Codenvy is that it is not easy to get a files out their hosted Docker environment.
+
+I have a small batch process I have coded up.  It is easy enough to pass in the input files.  The process runs and produces a single Excel file as the output.  The way I have come up with to get at the output file is to set up the Docker runner so that it emails the 
 results to my Gmail account.
 
 Here at the steps:
