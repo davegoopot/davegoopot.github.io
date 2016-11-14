@@ -14,40 +14,14 @@
         <header id="banner" class="body">
                 <h1><a href="../">Dave Potts - Software </a></h1>
                 <nav><ul>
+                    <li><a href="../category/coderdojo.html">CoderDojo</a></li>
                     <li class="active"><a href="../category/web-dev.html">Web Dev</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../phaserjs-at-the-manchester-coderdojo.html">Phaser.js at the Manchester CoderDojo</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2016-11-14T08:45:00+00:00">
-                Published: Mon 14 November 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="../category/web-dev.html">Web Dev</a>.</p>
-
-</footer><!-- /.post-info --><p>At this month's <a href="http://mcrcoderdojo.org.uk/">Manchester CoderDojo</a> I spent the time working with the participants
-going through the first tutorial using the Javascript 2-D game engine <a href="https://phaser.io/">Phaser.js</a>.</p>
-<p>It was just about on the edge of what the kids could keep up with but I'm optimistic
-that if they stick with it we'll be able to make some interesting games.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../getting-results-file-out-of-codenvy.html" rel="bookmark"
-                           title="Permalink to Getting Results File out of Codenvy">Getting Results File out of Codenvy</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <h1 class="entry-title"><a href="../getting-results-file-out-of-codenvy.html">Getting Results File out of Codenvy</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2016-03-05T10:20:00+00:00">
                 Published: Sat 05 March 2016
@@ -58,11 +32,42 @@ that if they stick with it we'll be able to make some interesting games.</p>    
         </address>
 <p>In <a href="../category/web-dev.html">Web Dev</a>.</p>
 
-</footer><!-- /.post-info -->                <p>I have something of a crush on <a href="https://codenvy.com/">Codenvy</a>, the on-demand in-your-browser development environment. The main wrinkle I've encountered with Codenvy is that it is not easy to get a files out their hosted Docker environment.</p>
-<p>I have a small batch process I have coded up.  It is easy enough ...</p>
-                <a class="readmore" href="../getting-results-file-out-of-codenvy.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+</footer><!-- /.post-info --><p>I have something of a crush on <a href="https://codenvy.com/">Codenvy</a>, the on-demand in-your-browser development environment. The main wrinkle I've encountered with Codenvy is that it is not easy to get a files out their hosted Docker environment.</p>
+<p>I have a small batch process I have coded up.  It is easy enough to pass in the input files.  The process runs and produces a single Excel file as the output.  The way I get at the output file is to set up the Docker runner so that it emails the results to my Gmail account.</p>
+<p>Here at the steps:</p>
+<p>Install Mutt and SSMPT in the Docker runner:
+<pre><code>
+    RUN sudo apt-get install -y mutt openssl ca-certificates ssmtp
+</code>
+</pre></p>
+<p>Create an ssmpt.conf file in my Codenvy project.  This file contains:
+<pre><code>
+    root=MY-GMAIL-EMAIL-ADDRESS
+    mailhub=smtp.gmail.com:587
+    rewriteDomain=
+    hostname=MY-GMAIL-EMAIL-ADDRESS
+    UseSTARTTLS=YES
+    AuthUser=MY-GMAIL-EMAIL-ADDRESS
+    AuthPass=MY-GMAIL-PASSWORD
+    FromLineOverride=YES
+</code>
+</pre></p>
+<p>Add the config into the Docker runner:
+<pre><code>
+    COPY $src$/ssmtp.conf /etc/ssmtp/
+</code>
+</pre></p>
+<p>Run the process to create the output file.
+ Use this one-liner to email the results:
+<pre><code>
+    RUN echo Result attached. | mutt -s "Matching Results" MY-GMAIL-EMAIL-ADDRESS -a /home/user/output.xlsx
+</code>
+</pre></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
 
             <li><article class="hentry">
                 <header>
