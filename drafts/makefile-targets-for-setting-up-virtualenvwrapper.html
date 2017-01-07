@@ -38,10 +38,11 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/python.html">Python</a>.</p>
 
-</footer><!-- /.post-info -->      <p>I use <a href="https://virtualenvwrapper.readthedocs.io">Virtualenvwrapper</a> to isolate the individual python projects
-I work on. I could never remember the commands to set up a new project, so I created a makefile to do the work.</p>
-<p>Just change "put-your-name-here" to whatever you want to call your virtual environment, set up a requirements.txt file
-with your pip dependencies and you are good to go. Type <code>make setup</code> and the makefile will do the rest.</p>
+</footer><!-- /.post-info -->      <p>I use <a href="https://virtualenvwrapper.readthedocs.io">Virtualenvwrapper</a> to isolate individual python projects.
+I could never remember the commands to set up a new project, so I created a makefile to do the work.</p>
+<p>Copy the code below, change "put-your-name-here" to whatever you want to call your virtual environment,
+set up a requirements.txt file with your pip dependencies and you are good to go. Type <code>make setup</code> and 
+the makefile will do the rest.</p>
 <div class="highlight"><pre><span></span><span class="nv">SHELL</span><span class="o">:=</span>/bin/bash
 <span class="nv">VIRTUAL_ENV_NAME</span><span class="o">=</span>put-your-name-here
 <span class="nv">VIRTUAL_ENV_INSTALL</span><span class="o">:=</span>~/.virtualenvs/<span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span>/bin/activate
