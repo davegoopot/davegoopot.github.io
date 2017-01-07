@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Makefile Targets for Setting up Virtualenvwrapper</title>
+        <title>Dave Potts - Software - Python</title>
         <link rel="stylesheet" href="http://www.davepotts.software/theme/css/main.css" />
 
         <!--[if IE]>
@@ -16,18 +16,14 @@
                 <nav><ul>
                     <li><a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a></li>
                     <li><a href="http://www.davepotts.software/category/google.html">Google</a></li>
+                    <li class="active"><a href="http://www.davepotts.software/category/python.html">Python</a></li>
                     <li><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="http://www.davepotts.software/drafts/makefile-targets-for-setting-up-virtualenvwrapper.html" rel="bookmark"
-           title="Permalink to Makefile Targets for Setting up Virtualenvwrapper">Makefile Targets for Setting up Virtualenvwrapper</a></h1>
-    </header>
 
-    <div class="entry-content">
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/makefile-targets-for-setting-up-virtualenvwrapper.html">Makefile Targets for Setting up Virtualenvwrapper</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2017-01-07T20:00:00+00:00">
                 Published: Sat 07 January 2017
@@ -38,7 +34,7 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/python.html">Python</a>.</p>
 
-</footer><!-- /.post-info -->      <p>I use <a href="https://virtualenvwrapper.readthedocs.io">Virtualenvwrapper</a> to isolate individual python projects.
+</footer><!-- /.post-info --><p>I use <a href="https://virtualenvwrapper.readthedocs.io">Virtualenvwrapper</a> to isolate individual python projects.
 I could never remember the commands to set up a new project, so I created a makefile to do the work.</p>
 <p>Copy the code below, change "put-your-name-here" to whatever you want to call your virtual environment,
 set up a requirements.txt file with your pip dependencies and you are good to go. Type <code>make setup</code> and 
@@ -65,11 +61,8 @@ the makefile will do the rest.</p>
     <span class="o">)</span>
 
 <span class="nf">setup</span><span class="o">:</span> <span class="k">$(</span><span class="nv">PIP_INSTALL</span><span class="k">)</span>
-</pre></div>
-    </div><!-- /.entry-content -->
-
-  </article>
-</section>
+</pre></div>                </article>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
         </section><!-- /#extras -->
 
