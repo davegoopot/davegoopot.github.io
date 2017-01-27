@@ -40,7 +40,7 @@ I could never remember the commands to set up a new project, so I created a make
 set up a requirements.txt file with your pip dependencies and you are good to go. Type <code>make setup</code> and 
 the makefile will do the rest.</p>
 <div class="highlight"><pre><span></span><span class="nv">SHELL</span><span class="o">:=</span>/bin/bash
-<span class="nv">VIRTUAL_ENV_NAME</span><span class="o">=</span>put-your-name-here
+<span class="nv">VIRTUAL_ENV_NAME</span><span class="o">:=</span>put-your-name-here
 <span class="nv">VIRTUAL_ENV_INSTALL</span><span class="o">:=</span>~/.virtualenvs/<span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span>/bin/activate
 <span class="nv">PIP_INSTALL</span><span class="o">:=</span>~/.virtualenvs/<span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span>/bin/pip
 
