@@ -23,7 +23,37 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/makefile-targets-for-setting-up-virtualenvwrapper.html">Makefile Targets for Setting up Virtualenvwrapper</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/a-local-facsimile-for-pythonanywhere-environment.html">A Local Facsimile for PythonAnywhere Environment</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-03-31T18:15:00+01:00">
+                Published: Fri 31 March 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/python.html">Python</a>.</p>
+
+</footer><!-- /.post-info --><p>I love working with <a href="https://www.pythonanywhere.com/">PythonAnywhere</a> ...except when I'm on a train. Even with the web-based 
+consoles, trying to work with mobile data signal going in and out is impossible.</p>
+<p>I decided that I needed an environment I could run locally that would be close enough to PythonAnywhere that when I moved
+code up to the PA cloud it would work without modification. To that end I've created a <a href="https://www.vagrantup.com/">Vagrant</a>
+file that I think comes close to providing an equivalent environment.</p>
+<p>Here's the code for the Vagrantfile:</p>
+<script src="https://gist.github.com/davegoopot/a6b54ae71a946391a03b21bd9918a397.js"></script>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/makefile-targets-for-setting-up-virtualenvwrapper.html" rel="bookmark"
+                           title="Permalink to Makefile Targets for Setting up Virtualenvwrapper">Makefile Targets for Setting up Virtualenvwrapper</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-01-07T20:00:00+00:00">
                 Published: Sat 07 January 2017
@@ -34,35 +64,15 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/python.html">Python</a>.</p>
 
-</footer><!-- /.post-info --><p>I use <a href="https://virtualenvwrapper.readthedocs.io">Virtualenvwrapper</a> to isolate individual python projects.
+</footer><!-- /.post-info -->                <p>I use <a href="https://virtualenvwrapper.readthedocs.io">Virtualenvwrapper</a> to isolate individual python projects.
 I could never remember the commands to set up a new project, so I created a makefile to do the work.</p>
 <p>Copy the code below, change "put-your-name-here" to whatever you want to call your virtual environment,
-set up a requirements.txt file with your pip dependencies and you are good to go. Type <code>make setup</code> and 
-the makefile will do the rest.</p>
-<div class="highlight"><pre><span></span><span class="nv">SHELL</span><span class="o">:=</span>/bin/bash
-<span class="nv">VIRTUAL_ENV_NAME</span><span class="o">:=</span>put-your-name-here
-<span class="nv">VIRTUAL_ENV_INSTALL</span><span class="o">:=</span>~/.virtualenvs/<span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span>/bin/activate
-<span class="nv">PIP_INSTALL</span><span class="o">:=</span>~/.virtualenvs/<span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span>/bin/pip
-
-<span class="nf">$(VIRTUAL_ENV_INSTALL)</span><span class="o">:</span>
-    <span class="o">(</span> <span class="se">\</span>
-    <span class="nb">source</span> <span class="k">$(</span>VIRTUALENVWRAPPER_SCRIPT<span class="k">)</span> <span class="p">;</span> <span class="se">\</span>
-    mkvirtualenv <span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span> --python<span class="o">=</span>/usr/bin/python3.5 <span class="p">;</span> <span class="se">\</span>
-    touch ~/.virtualenvs/<span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span>/bin/activate <span class="p">;</span> <span class="se">\</span>
-    <span class="o">)</span>
-
-
-<span class="nf">$(PIP_INSTALL)</span><span class="o">:</span> <span class="k">$(</span><span class="nv">VIRTUAL_ENV_INSTALL</span><span class="k">)</span> <span class="n">requirements</span>.<span class="n">txt</span>
-    <span class="o">(</span> <span class="se">\</span>
-    <span class="nb">source</span> <span class="k">$(</span>VIRTUALENVWRAPPER_SCRIPT<span class="k">)</span> <span class="p">;</span> <span class="se">\</span>
-    workon <span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span> <span class="p">;</span> <span class="se">\</span>
-    pip install -r requirements.txt <span class="p">;</span><span class="se">\</span>
-    touch ~/.virtualenvs/<span class="k">$(</span>VIRTUAL_ENV_NAME<span class="k">)</span>/bin/pip <span class="p">;</span><span class="se">\</span>
-    <span class="o">)</span>
-
-<span class="nf">setup</span><span class="o">:</span> <span class="k">$(</span><span class="nv">PIP_INSTALL</span><span class="k">)</span>
-</pre></div>                </article>
-            </aside><!-- /#featured -->
+set up a requirements.txt file ...</p>
+                <a class="readmore" href="http://www.davepotts.software/makefile-targets-for-setting-up-virtualenvwrapper.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
         </section><!-- /#extras -->
 
