@@ -23,7 +23,41 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/a-local-facsimile-for-pythonanywhere-environment.html">A Local Facsimile for PythonAnywhere Environment</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/my-first-chrome-extension.html">My First Chrome Extension</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-04-10T19:00:00+01:00">
+                Published: Mon 10 April 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+
+</footer><!-- /.post-info --><p>In order to learn how to write chrome extensions I wanted to write an extension that would display the title from the current page in a popup like this:</p>
+<p><img alt="Screenshot of Chrome Extension" src="http://www.davepotts.software/images/2017-04-08-chrome-ext.png" /></p>
+<p>The first thing to work out about Chrome extensions is the context within which they run. There are two cases. First there is the code running in the context of Chrome extensions. In this context you can access information about browser things, e.g. names of tabs, access bookmarks etc. And this is the context in which to make UI interactions such as showing popups. Second there is the DOM of the loaded page. The access of extensions to the DOM is tightly separated from the wider Chrome extension context.</p>
+<p>I need to access the page's DOM in order to read the title element. To do this I use the <a href="https://developer.chrome.com/extensions/tabs#method-executeScript">chrome.tabs.executeScript</a> method which lets you inject some javascript code into a page, let it run in the context of the page's DOM, and register a callback to receive the results. The code I inject is then just a very simple access of the title element <code>document.getElementsByTagName('title')[0].text;</code>. The only other wrinkle to take care of is that this code must not run until the <code>DOMContentLoaded</code> event has been fired indicating that the browser has built the DOM tree.</p>
+<p>Here's the full list of files needed ot make this work...</p>
+<ol>
+<li>manifest.json -- the Chrome extension manifest file describing how the extension works</li>
+<li>popup.html -- a very simple page that the Chrome extension uses to display the title</li>
+<li>popup.js -- the javascript file that makes the call to grab the title element</li>
+</ol>
+<script src="https://gist.github.com/davegoopot/dbadfe0be39e74ccb0971e94368fdde7.js"></script>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/a-local-facsimile-for-pythonanywhere-environment.html" rel="bookmark"
+                           title="Permalink to A Local Facsimile for PythonAnywhere Environment">A Local Facsimile for PythonAnywhere Environment</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-03-31T18:15:00+01:00">
                 Published: Fri 31 March 2017
@@ -34,18 +68,12 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/python.html">Python</a>.</p>
 
-</footer><!-- /.post-info --><p>I love working with <a href="https://www.pythonanywhere.com/">PythonAnywhere</a> ...except when I'm on a train. Even with the web-based 
+</footer><!-- /.post-info -->                <p>I love working with <a href="https://www.pythonanywhere.com/">PythonAnywhere</a> ...except when I'm on a train. Even with the web-based 
 consoles, trying to work with mobile data signal going in and out is impossible.</p>
-<p>I decided that I needed an environment I could run locally that would be close enough to PythonAnywhere that when I moved
-code up to the PA cloud it would work without modification. To that end I've created a <a href="https://www.vagrantup.com/">Vagrant</a>
-file that I think comes close to providing an equivalent environment.</p>
-<p>Here's the code for the Vagrantfile:</p>
-<script src="https://gist.github.com/davegoopot/a6b54ae71a946391a03b21bd9918a397.js"></script>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>I decided that I needed an environment I could run locally that would be close enough to PythonAnywhere that when ...</p>
+                <a class="readmore" href="http://www.davepotts.software/a-local-facsimile-for-pythonanywhere-environment.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -243,31 +271,6 @@ that if they stick ...</p>
 </footer><!-- /.post-info -->                <p>I have something of a crush on <a href="https://codenvy.com/">Codenvy</a>, the on-demand in-your-browser development environment. The main wrinkle I've encountered with Codenvy is that it is not easy to get a files out their hosted Docker environment.</p>
 <p>I have a small batch process I have coded up.  It is easy enough ...</p>
                 <a class="readmore" href="http://www.davepotts.software/getting-results-file-out-of-codenvy.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.davepotts.software/tools-for-checking-webpage-quality.html" rel="bookmark"
-                           title="Permalink to Tools for Checking Webpage Quality">Tools for Checking Webpage Quality</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-02-17T10:20:00+00:00">
-                Published: Wed 17 February 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
-
-</footer><!-- /.post-info -->                <p>My graphics design skills are not going to win any prizes. To help me not make a complete fool of myself at website design I use these three tools to check for obvious failures:</p>
-<ol>
-<li>The audit function built into Chrome's developer tools</li>
-<li>The W3C unified validator at: <a href="https://validator.w3.org/unicorn/">https://validator ...</a></li></ol>
-                <a class="readmore" href="http://www.davepotts.software/tools-for-checking-webpage-quality.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

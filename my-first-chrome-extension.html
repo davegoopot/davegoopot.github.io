@@ -24,7 +24,7 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://www.davepotts.software/drafts/my-first-chrome-extension.html" rel="bookmark"
+        <a href="http://www.davepotts.software/my-first-chrome-extension.html" rel="bookmark"
            title="Permalink to My First Chrome Extension">My First Chrome Extension</a></h1>
     </header>
 
@@ -45,9 +45,9 @@
 <p>I need to access the page's DOM in order to read the title element. To do this I use the <a href="https://developer.chrome.com/extensions/tabs#method-executeScript">chrome.tabs.executeScript</a> method which lets you inject some javascript code into a page, let it run in the context of the page's DOM, and register a callback to receive the results. The code I inject is then just a very simple access of the title element <code>document.getElementsByTagName('title')[0].text;</code>. The only other wrinkle to take care of is that this code must not run until the <code>DOMContentLoaded</code> event has been fired indicating that the browser has built the DOM tree.</p>
 <p>Here's the full list of files needed ot make this work...</p>
 <ol>
+<li>manifest.json -- the Chrome extension manifest file describing how the extension works</li>
 <li>popup.html -- a very simple page that the Chrome extension uses to display the title</li>
 <li>popup.js -- the javascript file that makes the call to grab the title element</li>
-<li>manifest.json -- the Chrome extension manifest file describing how the extension works</li>
 </ol>
 <script src="https://gist.github.com/davegoopot/dbadfe0be39e74ccb0971e94368fdde7.js"></script>
     </div><!-- /.entry-content -->

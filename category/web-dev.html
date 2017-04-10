@@ -23,7 +23,41 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/implementing-the-base-page-for-google-optimize-experiment.html">Implementing the Base Page for Google Optimize Experiment</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/my-first-chrome-extension.html">My First Chrome Extension</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-04-10T19:00:00+01:00">
+                Published: Mon 10 April 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+
+</footer><!-- /.post-info --><p>In order to learn how to write chrome extensions I wanted to write an extension that would display the title from the current page in a popup like this:</p>
+<p><img alt="Screenshot of Chrome Extension" src="http://www.davepotts.software/images/2017-04-08-chrome-ext.png" /></p>
+<p>The first thing to work out about Chrome extensions is the context within which they run. There are two cases. First there is the code running in the context of Chrome extensions. In this context you can access information about browser things, e.g. names of tabs, access bookmarks etc. And this is the context in which to make UI interactions such as showing popups. Second there is the DOM of the loaded page. The access of extensions to the DOM is tightly separated from the wider Chrome extension context.</p>
+<p>I need to access the page's DOM in order to read the title element. To do this I use the <a href="https://developer.chrome.com/extensions/tabs#method-executeScript">chrome.tabs.executeScript</a> method which lets you inject some javascript code into a page, let it run in the context of the page's DOM, and register a callback to receive the results. The code I inject is then just a very simple access of the title element <code>document.getElementsByTagName('title')[0].text;</code>. The only other wrinkle to take care of is that this code must not run until the <code>DOMContentLoaded</code> event has been fired indicating that the browser has built the DOM tree.</p>
+<p>Here's the full list of files needed ot make this work...</p>
+<ol>
+<li>manifest.json -- the Chrome extension manifest file describing how the extension works</li>
+<li>popup.html -- a very simple page that the Chrome extension uses to display the title</li>
+<li>popup.js -- the javascript file that makes the call to grab the title element</li>
+</ol>
+<script src="https://gist.github.com/davegoopot/dbadfe0be39e74ccb0971e94368fdde7.js"></script>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/implementing-the-base-page-for-google-optimize-experiment.html" rel="bookmark"
+                           title="Permalink to Implementing the Base Page for Google Optimize Experiment">Implementing the Base Page for Google Optimize Experiment</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-03-25T18:15:00+00:00">
                 Published: Sat 25 March 2017
@@ -34,21 +68,14 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
 
-</footer><!-- /.post-info --><p>I'm going to create a site on <a href="https://glitch.com/">Glitch</a> to experiment with using Google Optimize.</p>
+</footer><!-- /.post-info -->                <p>I'm going to create a site on <a href="https://glitch.com/">Glitch</a> to experiment with using Google Optimize.</p>
 <p>The page needs these things:</p>
 <ol>
 <li>Make the offer whether or not to take the offered pill -- this page will only offer a red pill to start with</li>
-<li>Two result pages, one for taking the pill and one for rejecting</li>
-<li>I'm going to put Google Tag Manager on to allow easy deployment of other tags</li>
-<li>Through GTM I'm going to deploy Google Analytics</li>
-</ol>
-<p>You can see the resulting page here: <a href="https://nifty-bank.glitch.me/">https://nifty-bank.glitch.me/</a></p>
-<p>Next: Running an experiment with Optimize.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<li>Two result pages, one for taking the pill ...</li></ol>
+                <a class="readmore" href="http://www.davepotts.software/implementing-the-base-page-for-google-optimize-experiment.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
