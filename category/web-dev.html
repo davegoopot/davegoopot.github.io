@@ -23,7 +23,37 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/my-first-chrome-extension.html">My First Chrome Extension</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/google-optimize-gotchas.html">Google Optimize Gotchas</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-04-15T21:30:00+01:00">
+                Published: Sat 15 April 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+
+</footer><!-- /.post-info --><p>I've been experimenting with <a href="https://www.google.com/analytics/optimize/">Google Optimize</a> and have tripped up a couple of times. First I made the assumption that Google Tag Manager would be the best way to implement the experiments. Second I didn't appreciate the linkages needed through to Google Analytics required to make Optimize work.</p>
+<h2>Don't Implement Using Google Tag Manager</h2>
+<p>I'm completely sold on the benefits of using Google Tag Manager, 'GTM', for managing tag deployment on pages. Consequently when it came to putting Optimize tags on to my experimental site GTM was the obvious option. More, with a quick search I found that there was a pre-baked Optimize tag already for me on GTM. I quickly found the problem with this setup: nasty screen flicker as the page loaded with the original version and Optimize then chose to deploy the experimental variant. Google is aware of this problem and recommends  that you manually deploy the Optimize Javascript directly on to your pages. Once I stopped the GTM tag and directly changed the page the flicker went away. See <a href="https://support.google.com/360suite/optimize/answer/7359264">https://support.google.com/360suite/optimize/answer/7359264</a>.</p>
+<h2>Set Up Your Goals in Google Analytics First</h2>
+<p>Not being a heavy Google Analytics, 'GA', user I didn't realise the extent that Optimize depended on GA. Optimize really only implements the page variant delivery part of the testing. All the heavy lifting for the analysis of the results is run in GA. Before you try to set up your experiment in Optimize you should set up your goals in GA. See <a href="https://support.google.com/analytics/answer/1012040">here</a> for how to set up goals. Once you have your goals in GA then you will be able to link your experiment to the achievement of the goals.</p>
+<h2>Try Out My Experiment</h2>
+<p>As discussed <a href="http://www.davepotts.software/first-experiment-with-google-optimize.html">previously</a>, feel free to <a href="https://nifty-bank.glitch.me/">try out the experiment</a>. The red pill is the baseline and the blue pill is the variant.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/my-first-chrome-extension.html" rel="bookmark"
+                           title="Permalink to My First Chrome Extension">My First Chrome Extension</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-04-10T19:00:00+01:00">
                 Published: Mon 10 April 2017
@@ -34,22 +64,12 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
 
-</footer><!-- /.post-info --><p>In order to learn how to write chrome extensions I wanted to write an extension that would display the title from the current page in a popup like this:</p>
+</footer><!-- /.post-info -->                <p>In order to learn how to write chrome extensions I wanted to write an extension that would display the title from the current page in a popup like this:</p>
 <p><img alt="Screenshot of Chrome Extension" src="http://www.davepotts.software/images/2017-04-08-chrome-ext.png" /></p>
-<p>The first thing to work out about Chrome extensions is the context within which they run. There are two cases. First there is the code running in the context of Chrome extensions. In this context you can access information about browser things, e.g. names of tabs, access bookmarks etc. And this is the context in which to make UI interactions such as showing popups. Second there is the DOM of the loaded page. The access of extensions to the DOM is tightly separated from the wider Chrome extension context.</p>
-<p>I need to access the page's DOM in order to read the title element. To do this I use the <a href="https://developer.chrome.com/extensions/tabs#method-executeScript">chrome.tabs.executeScript</a> method which lets you inject some javascript code into a page, let it run in the context of the page's DOM, and register a callback to receive the results. The code I inject is then just a very simple access of the title element <code>document.getElementsByTagName('title')[0].text;</code>. The only other wrinkle to take care of is that this code must not run until the <code>DOMContentLoaded</code> event has been fired indicating that the browser has built the DOM tree.</p>
-<p>Here's the full list of files needed ot make this work...</p>
-<ol>
-<li>manifest.json -- the Chrome extension manifest file describing how the extension works</li>
-<li>popup.html -- a very simple page that the Chrome extension uses to display the title</li>
-<li>popup.js -- the javascript file that makes the call to grab the title element</li>
-</ol>
-<script src="https://gist.github.com/davegoopot/dbadfe0be39e74ccb0971e94368fdde7.js"></script>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>The first thing to work out about Chrome extensions is the context within which they run. There are two cases. First ...</p>
+                <a class="readmore" href="http://www.davepotts.software/my-first-chrome-extension.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
