@@ -25,7 +25,34 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/google-optimize-gotchas.html">Google Optimize Gotchas</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/passing-the-google-mobile-site-test-step-1-viewport-metatag.html">Passing the Google Mobile Site Test - Step 1 - Viewport Metatag</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-05-08T22:00:00+01:00">
+                Published: Mon 08 May 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+
+</footer><!-- /.post-info --><p>This blog site didn't pass the <a href="https://search.google.com/search-console/mobile-friendly">Google mobile friendly site test</a>. I'm going to publish some posts describing how I updated the blog site to make it pass.</p>
+<p>Step one is this post: fixing the viewport.</p>
+<p>The viewport is a HTML meta tag that tells small screen devices how they should scale pages when rendering to their small screens. See the <a href="https://www.w3schools.com/css/css_rwd_viewport.asp">W3 Schools entry on the viewport</a>. To change the viewport for this blog site I had to update the template entry in my <a href="http://docs.getpelican.com/en/stable/index.html">Pelican</a> theme. To update the theme I copied the standard "notmyidea" theme from the site package and updated the base.html file to include a suitable viewport metatag. Finally I updated the pelicanconf.py file to use my update theme and republished.</p>
+<p>Fixing the viewport unearthed the next Google complaint: "Content wider than screen". Fixing that is the topic of the next post.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/google-optimize-gotchas.html" rel="bookmark"
+                           title="Permalink to Google Optimize Gotchas">Google Optimize Gotchas</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-04-15T21:30:00+01:00">
                 Published: Sat 15 April 2017
@@ -36,18 +63,10 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
 
-</footer><!-- /.post-info --><p>I've been experimenting with <a href="https://www.google.com/analytics/optimize/">Google Optimize</a> and have tripped up a couple of times. First I made the assumption that Google Tag Manager would be the best way to implement the experiments. Second I didn't appreciate the linkages needed through to Google Analytics required to make Optimize work.</p>
-<h2>Don't Implement Using Google Tag Manager</h2>
-<p>I'm completely sold on the benefits of using Google Tag Manager, 'GTM', for managing tag deployment on pages. Consequently when it came to putting Optimize tags on to my experimental site GTM was the obvious option. More, with a quick search I found that there was a pre-baked Optimize tag already for me on GTM. I quickly found the problem with this setup: nasty screen flicker as the page loaded with the original version and Optimize then chose to deploy the experimental variant. Google is aware of this problem and recommends  that you manually deploy the Optimize Javascript directly on to your pages. Once I stopped the GTM tag and directly changed the page the flicker went away. See <a href="https://support.google.com/360suite/optimize/answer/7359264">https://support.google.com/360suite/optimize/answer/7359264</a>.</p>
-<h2>Set Up Your Goals in Google Analytics First</h2>
-<p>Not being a heavy Google Analytics, 'GA', user I didn't realise the extent that Optimize depended on GA. Optimize really only implements the page variant delivery part of the testing. All the heavy lifting for the analysis of the results is run in GA. Before you try to set up your experiment in Optimize you should set up your goals in GA. See <a href="https://support.google.com/analytics/answer/1012040">here</a> for how to set up goals. Once you have your goals in GA then you will be able to link your experiment to the achievement of the goals.</p>
-<h2>Try Out My Experiment</h2>
-<p>As discussed <a href="http://www.davepotts.software/first-experiment-with-google-optimize.html">previously</a>, feel free to <a href="https://nifty-bank.glitch.me/">try out the experiment</a>. The red pill is the baseline and the blue pill is the variant.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>I've been experimenting with <a href="https://www.google.com/analytics/optimize/">Google Optimize</a> and have tripped up a couple of times. First I made the assumption that Google Tag Manager would be the best way to implement the experiments. Second I didn't appreciate the linkages needed through to Google Analytics required to make Optimize work ...</p>
+                <a class="readmore" href="http://www.davepotts.software/google-optimize-gotchas.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -243,32 +262,11 @@ This simple one had passed me by: how to specify the language of the page as an 
                 <a class="readmore" href="http://www.davepotts.software/specifying-webpage-language.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.davepotts.software/using-github-pages.html" rel="bookmark"
-                           title="Permalink to Using GitHub Pages">Using GitHub Pages</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-14T10:20:00+00:00">
-                Published: Thu 14 January 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
-
-</footer><!-- /.post-info -->                <p>I'm starting out with my site hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
-At the outset this is just me typing HTML directly into the GitHub editor.
-I intend to follow the <a href="https://help.github.com/articles/using-jekyll-with-pages/">instructions</a> to set up the built in
-Jekyll markdown blog generator in the future.</p>
-                <a class="readmore" href="http://www.davepotts.software/using-github-pages.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
                 </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 2
+        <a href="http://www.davepotts.software/category/web-dev2.html">&raquo;</a>
+</p>
                 </section><!-- /#content -->
         <section id="extras" class="body">
         </section><!-- /#extras -->
