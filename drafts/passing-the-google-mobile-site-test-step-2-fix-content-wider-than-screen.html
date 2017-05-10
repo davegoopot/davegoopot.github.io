@@ -45,7 +45,7 @@
 <p>Switching Chrome into developer tools mode (press F12 on Windows), and choosing the device emulator, the problem becomes clear.</p>
 <p>![Screenshot of browser showing page overflow]({filename}/images/2017-05-10 20_29_52-Dave Potts - Software.png)</p>
 <p>Continuing to use the Chrome dev tools I start looking for the styling culprit. A quick scan finds several <code>width: 800px;</code> attributes set in the style sheets. Looking at how the page works it is clear that <code>max-width</code> is more appropriate than forcing a width value. I did a find and replace in all my css template files to replace <code>width`` with</code>max-width```.</p>
-<p>Fixing the viewport unearthed the next Google complaint: "Content wider than screen". Fixing that is the topic of the next post.</p>
+<p>A quick commit and republish and the page looks fine on mobile and Google has given me <a href="https://search.google.com/search-console/mobile-friendly?id=OjYOxYg_o8RJhJtNtEUKkA">a tick in the box</a>. </p>
     </div><!-- /.entry-content -->
 
   </article>
