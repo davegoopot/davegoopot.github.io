@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Passing the Google Mobile Site Test - Step 2 - Fix Content Wider Than Screen</title>
+        <link rel="stylesheet" href="http://www.davepotts.software/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://www.davepotts.software/">Dave Potts - Software </a></h1>
+                <nav><ul>
+                    <li><a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a></li>
+                    <li><a href="http://www.davepotts.software/category/google.html">Google</a></li>
+                    <li><a href="http://www.davepotts.software/category/python.html">Python</a></li>
+                    <li><a href="http://www.davepotts.software/category/science.html">Science</a></li>
+                    <li class="active"><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://www.davepotts.software/drafts/passing-the-google-mobile-site-test-step-2-fix-content-wider-than-screen.html" rel="bookmark"
+           title="Permalink to Passing the Google Mobile Site Test - Step 2 - Fix Content Wider Than Screen">Passing the Google Mobile Site Test - Step 2 - Fix Content Wider Than Screen</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-05-10T21:00:00+01:00">
+                Published: Wed 10 May 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+
+</footer><!-- /.post-info -->      <p>I'm working to get this blog site to pass the <a href="https://search.google.com/search-console/mobile-friendly">Google mobile friendly site test</a>. In the <a href="http://www.davepotts.software/passing-the-google-mobile-site-test-step-1-viewport-metatag.html">last post</a> I fixed the viewport. In this post I'm going to fix the "Content wider than screen" warning.</p>
+<p>Switching Chrome into developer tools mode (press F12 on Windows), and choosing the device emulator, the problem becomes clear.</p>
+<p>![Screenshot of browser showing page overflow]({filename}/images/2017-05-10 20_29_52-Dave Potts - Software.png)</p>
+<p>Continuing to use the Chrome dev tools I start looking for the styling culprit. A quick scan finds several <code>width: 800px;</code> attributes set in the style sheets. Looking at how the page works it is clear that <code>max-width</code> is more appropriate than forcing a width value. I did a find and replace in all my css template files to replace <code>width`` with</code>max-width```.</p>
+<p>Fixing the viewport unearthed the next Google complaint: "Content wider than screen". Fixing that is the topic of the next post.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66545314-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>
