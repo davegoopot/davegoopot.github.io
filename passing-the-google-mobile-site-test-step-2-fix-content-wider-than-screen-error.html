@@ -43,7 +43,7 @@
 
 </footer><!-- /.post-info -->      <p>I'm working to get this blog site to pass the <a href="https://search.google.com/search-console/mobile-friendly">Google mobile friendly site test</a>. In the <a href="http://www.davepotts.software/passing-the-google-mobile-site-test-step-1-viewport-metatag.html">last post</a> I fixed the viewport. In this post I'm going to fix the "Content wider than screen" warning.</p>
 <p>Switching Chrome into developer tools mode (press F12 on Windows), and choosing the device emulator, the problem becomes clear with the page scrolling beyond the right edge of the screen.</p>
-<p>Continuing to use the Chrome dev tools I start looking for the styling culprit. A quick scan finds several <code>width: 800px;</code> attributes set in the style sheets. Looking at how the page works it is clear that <code>max-width</code> is more appropriate than forcing a width value. I did a find and replace in all my css template files to replace <code>width`` with</code>max-width```.</p>
+<p>Continuing to use the Chrome dev tools I start looking for the styling culprit. A quick scan finds several <code>width: 800px;</code> attributes set in the style sheets. Looking at how the page works it is clear that <code>max-width</code> is more appropriate than forcing a width value. I did a find and replace in all my css template files to replace <code>width</code> with <code>max-width</code>.</p>
 <p>A quick commit and republish and the page looks fine on mobile and Google has given me <a href="https://search.google.com/search-console/mobile-friendly?id=OjYOxYg_o8RJhJtNtEUKkA">a tick in the box</a>. </p>
     </div><!-- /.entry-content -->
 
