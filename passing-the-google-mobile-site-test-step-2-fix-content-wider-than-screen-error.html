@@ -26,7 +26,7 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://www.davepotts.software/drafts/passing-the-google-mobile-site-test-step-2-fix-content-wider-than-screen-error.html" rel="bookmark"
+        <a href="http://www.davepotts.software/passing-the-google-mobile-site-test-step-2-fix-content-wider-than-screen-error.html" rel="bookmark"
            title="Permalink to Passing the Google Mobile Site Test - Step 2 - Fix "Content Wider Than Screen" Error">Passing the Google Mobile Site Test - Step 2 - Fix "Content Wider Than Screen" Error</a></h1>
     </header>
 
@@ -42,8 +42,7 @@
 <p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
 
 </footer><!-- /.post-info -->      <p>I'm working to get this blog site to pass the <a href="https://search.google.com/search-console/mobile-friendly">Google mobile friendly site test</a>. In the <a href="http://www.davepotts.software/passing-the-google-mobile-site-test-step-1-viewport-metatag.html">last post</a> I fixed the viewport. In this post I'm going to fix the "Content wider than screen" warning.</p>
-<p>Switching Chrome into developer tools mode (press F12 on Windows), and choosing the device emulator, the problem becomes clear.</p>
-<p><img alt="Screenshot of browser showing page overflow" src="http://www.davepotts.software/images/2017-05-10-20_29_52-Dave-Potts-Software.png" /></p>
+<p>Switching Chrome into developer tools mode (press F12 on Windows), and choosing the device emulator, the problem becomes clear with the page scrolling beyond the right edge of the screen.</p>
 <p>Continuing to use the Chrome dev tools I start looking for the styling culprit. A quick scan finds several <code>width: 800px;</code> attributes set in the style sheets. Looking at how the page works it is clear that <code>max-width</code> is more appropriate than forcing a width value. I did a find and replace in all my css template files to replace <code>width`` with</code>max-width```.</p>
 <p>A quick commit and republish and the page looks fine on mobile and Google has given me <a href="https://search.google.com/search-console/mobile-friendly?id=OjYOxYg_o8RJhJtNtEUKkA">a tick in the box</a>. </p>
     </div><!-- /.entry-content -->
