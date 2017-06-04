@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dave Potts - Software - Authors</title>
+        <title>GitHub Pages Redirecting Plain Hostname to WWW</title>
         <link rel="stylesheet" href="http://www.davepotts.software/theme/css/main.css" />
 
         <!--[if IE]>
@@ -19,17 +19,37 @@
                     <li><a href="http://www.davepotts.software/category/google.html">Google</a></li>
                     <li><a href="http://www.davepotts.software/category/python.html">Python</a></li>
                     <li><a href="http://www.davepotts.software/category/science.html">Science</a></li>
-                    <li><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
+                    <li class="active"><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-
 <section id="content" class="body">
-    <h1>Authors on Dave Potts - Software</h1>
-    <ul>
-        <li><a href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a> (18)</li>
-    </ul>
-</section>
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://www.davepotts.software/github-pages-redirecting-plain-hostname-to-www.html" rel="bookmark"
+           title="Permalink to GitHub Pages Redirecting Plain Hostname to WWW">GitHub Pages Redirecting Plain Hostname to WWW</a></h1>
+    </header>
 
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-06-04T11:00:00+01:00">
+                Published: Sun 04 June 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+
+</footer><!-- /.post-info -->      <p>I set this site up on GitHub pages and the address http://www.davepotts.software was working just fine. The other day I noticed that
+if you tried to load the site without the "www." you ended up at a domain parking page of my DNS provider.</p>
+<p>The fix so that GitHub Pages would redirect for me was very simple. I was missing a couple DNS A records to resolve the
+plain davepotts.software address to the GitHub Pages server.</p>
+<p>Here are the <a href="https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider">full instructions on how to setup your DNS for GitHub Pages</a>.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
         </section><!-- /#extras -->
 
