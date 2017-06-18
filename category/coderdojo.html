@@ -25,7 +25,55 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/phaserjs-at-the-manchester-coderdojo.html">Phaser.js at the Manchester CoderDojo</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/fidget-spinner-microbit-electronics.html">Fidget Spinner Micro:bit Electronics</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-07-18T16:30:00+01:00">
+                Published: Tue 18 July 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a>.</p>
+
+</footer><!-- /.post-info --><p>Sunday 11th June 2017 was the 40th <a href="https://twitter.com/McrCoderDojo">Manchester CoderDojo</a>. Sons #1, #3, and I ran a table working with <a href="http://microbit.org/">Micro:bits</a> to see if we could figure out how fast a fidget spinner was revolving. We were inspired from the May CoderDojo when we videoed a spinner and discovered <a href="https://twitter.com/damianpayton/status/864544739600760832">weird effects from the phone camera</a>.</p>
+<p>We tried two approaches: 1) building a strobe light, and 2) using a light detector to sense the arms moving.</p>
+<h2>Installing the Software</h2>
+<p>These instructions have only been tried out on Windows. Linux and Mac users will have to find equivalent software.</p>
+<p>The three things you need to install are</p>
+<ol>
+<li>The windows serial drivers for the Micro:bit</li>
+<li>The Mu programming environment</li>
+<li>The Serial Oscilloscope tool</li>
+</ol>
+<p>Here's <a href="https://gist.github.com/davegoopot/08b0d1148b3550fc8350a754e74a8f8c =200x">the page with links to the installers</a>.</p>
+<h2>Micro:bit Powered Strobe Light</h2>
+<p>We built a strobe light from the Micro:bit and an LED. To be able to see the strobe effect on the fidget spinner you need to find somewhere really dark to run the experiment. Once you have somewhere dark enough the strobe effect does work well to apparently slowdown the spinner.</p>
+<p>Here's the circuit diagram:</p>
+<p>c</p>
+<p>And here's the code. You will need to experiment with the number of flashes per second. A value in the range 30-60 worked well for us.</p>
+<script src="https://gist.github.com/davegoopot/33d2535e6f0a5047cb77fca2e349db56.js"></script>
+
+<h2>Fidget Spinner Oscilloscope Visualisation</h2>
+<p>Next we built a light detector and attached it to the oscilloscope to visualise the arms of the fidget spinner rotating. You can see the results on this <a href="https://twitter.com/SharpFutures/status/873893052795977732">video posted on Twitter</a>.</p>
+<p>Here's the circuit diagram. The resistor pictured is too small. You should use a 1-5 kilo-ohms resistor to get a decent range of values reported from the detector.</p>
+<p>Here's the circuit:</p>
+<p><img alt="Circuit diagram" src="https://pbs.twimg.com/media/DCCCtEMXcAArAuM.jpg" style="width:200px;"></p>
+<p>And here's the code:</p>
+<script src="https://gist.github.com/davegoopot/83b692608059addfa10e8d0eb7745dc3.js"></script>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/phaserjs-at-the-manchester-coderdojo.html" rel="bookmark"
+                           title="Permalink to Phaser.js at the Manchester CoderDojo">Phaser.js at the Manchester CoderDojo</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-11-14T08:45:00+00:00">
                 Published: Mon 14 November 2016
@@ -36,11 +84,15 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a>.</p>
 
-</footer><!-- /.post-info --><p>At this month's <a href="http://mcrcoderdojo.org.uk/">Manchester CoderDojo</a> I spent the time working with the participants
+</footer><!-- /.post-info -->                <p>At this month's <a href="http://mcrcoderdojo.org.uk/">Manchester CoderDojo</a> I spent the time working with the participants
 going through the first tutorial using the Javascript 2-D game engine <a href="https://phaser.io/">Phaser.js</a>.</p>
 <p>It was just about on the edge of what the kids could keep up with but I'm optimistic
-that if they stick with it we'll be able to make some interesting games.</p>                </article>
-            </aside><!-- /#featured -->
+that if they stick ...</p>
+                <a class="readmore" href="http://www.davepotts.software/phaserjs-at-the-manchester-coderdojo.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
         </section><!-- /#extras -->
 

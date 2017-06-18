@@ -25,7 +25,55 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/github-pages-redirecting-plain-hostname-to-www.html">GitHub Pages Redirecting Plain Hostname to WWW</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/fidget-spinner-microbit-electronics.html">Fidget Spinner Micro:bit Electronics</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-07-18T16:30:00+01:00">
+                Published: Tue 18 July 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a>.</p>
+
+</footer><!-- /.post-info --><p>Sunday 11th June 2017 was the 40th <a href="https://twitter.com/McrCoderDojo">Manchester CoderDojo</a>. Sons #1, #3, and I ran a table working with <a href="http://microbit.org/">Micro:bits</a> to see if we could figure out how fast a fidget spinner was revolving. We were inspired from the May CoderDojo when we videoed a spinner and discovered <a href="https://twitter.com/damianpayton/status/864544739600760832">weird effects from the phone camera</a>.</p>
+<p>We tried two approaches: 1) building a strobe light, and 2) using a light detector to sense the arms moving.</p>
+<h2>Installing the Software</h2>
+<p>These instructions have only been tried out on Windows. Linux and Mac users will have to find equivalent software.</p>
+<p>The three things you need to install are</p>
+<ol>
+<li>The windows serial drivers for the Micro:bit</li>
+<li>The Mu programming environment</li>
+<li>The Serial Oscilloscope tool</li>
+</ol>
+<p>Here's <a href="https://gist.github.com/davegoopot/08b0d1148b3550fc8350a754e74a8f8c =200x">the page with links to the installers</a>.</p>
+<h2>Micro:bit Powered Strobe Light</h2>
+<p>We built a strobe light from the Micro:bit and an LED. To be able to see the strobe effect on the fidget spinner you need to find somewhere really dark to run the experiment. Once you have somewhere dark enough the strobe effect does work well to apparently slowdown the spinner.</p>
+<p>Here's the circuit diagram:</p>
+<p>c</p>
+<p>And here's the code. You will need to experiment with the number of flashes per second. A value in the range 30-60 worked well for us.</p>
+<script src="https://gist.github.com/davegoopot/33d2535e6f0a5047cb77fca2e349db56.js"></script>
+
+<h2>Fidget Spinner Oscilloscope Visualisation</h2>
+<p>Next we built a light detector and attached it to the oscilloscope to visualise the arms of the fidget spinner rotating. You can see the results on this <a href="https://twitter.com/SharpFutures/status/873893052795977732">video posted on Twitter</a>.</p>
+<p>Here's the circuit diagram. The resistor pictured is too small. You should use a 1-5 kilo-ohms resistor to get a decent range of values reported from the detector.</p>
+<p>Here's the circuit:</p>
+<p><img alt="Circuit diagram" src="https://pbs.twimg.com/media/DCCCtEMXcAArAuM.jpg" style="width:200px;"></p>
+<p>And here's the code:</p>
+<script src="https://gist.github.com/davegoopot/83b692608059addfa10e8d0eb7745dc3.js"></script>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/github-pages-redirecting-plain-hostname-to-www.html" rel="bookmark"
+                           title="Permalink to GitHub Pages Redirecting Plain Hostname to WWW">GitHub Pages Redirecting Plain Hostname to WWW</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-06-04T11:00:00+01:00">
                 Published: Sun 04 June 2017
@@ -36,16 +84,12 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
 
-</footer><!-- /.post-info --><p>I set this site up on GitHub pages and the address http://www.davepotts.software was working just fine. The other day I noticed that
+</footer><!-- /.post-info -->                <p>I set this site up on GitHub pages and the address http://www.davepotts.software was working just fine. The other day I noticed that
 if you tried to load the site without the "www." you ended up at a domain parking page of my DNS provider.</p>
-<p>The fix so that GitHub Pages would redirect for me was very simple. I was missing a couple DNS A records to resolve the
-plain davepotts.software address to the GitHub Pages server.</p>
-<p>Here are the <a href="https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider">full instructions on how to setup your DNS for GitHub Pages</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>The fix so ...</p>
+                <a class="readmore" href="http://www.davepotts.software/github-pages-redirecting-plain-hostname-to-www.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -234,31 +278,6 @@ consoles, trying to work with mobile data signal going in and out is impossible.
 <h2>Plan</h2>
 <p>I'd like to see how this works with a quick A/B test. I'm going to make a Matrix inspired page ...</p>
                 <a class="readmore" href="http://www.davepotts.software/first-experiment-with-google-optimize.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.davepotts.software/mailgun-just-easier-than-smtp.html" rel="bookmark"
-                           title="Permalink to Mailgun Just Easier Than SMTP">Mailgun Just Easier Than SMTP</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-02-18T21:30:00+00:00">
-                Published: Sat 18 February 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
-
-</footer><!-- /.post-info -->                <p>After spending a couple of hours sweating to get python to send email using
-Gmail, application passwords etc. I found the
-<a href="https://www.mailgun.com/">Mailgun email service</a> which makes programmatically
-sending emails so much easier.</p>
-                <a class="readmore" href="http://www.davepotts.software/mailgun-just-easier-than-smtp.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
