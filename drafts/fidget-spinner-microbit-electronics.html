@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fidget Spinner Micro:bit Electronics</title>
+        <link rel="stylesheet" href="http://www.davepotts.software/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://www.davepotts.software/">Dave Potts - Software </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a></li>
+                    <li><a href="http://www.davepotts.software/category/google.html">Google</a></li>
+                    <li><a href="http://www.davepotts.software/category/python.html">Python</a></li>
+                    <li><a href="http://www.davepotts.software/category/science.html">Science</a></li>
+                    <li><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://www.davepotts.software/drafts/fidget-spinner-microbit-electronics.html" rel="bookmark"
+           title="Permalink to Fidget Spinner Micro:bit Electronics">Fidget Spinner Micro:bit Electronics</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-07-17T14:00:00+01:00">
+                Published: Mon 17 July 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a>.</p>
+
+</footer><!-- /.post-info -->      <p>Sunday 11th June 2017 was the 40th <a href="https://twitter.com/McrCoderDojo">Manchester CoderDojo</a>. Sons #1 and #3, and I ran a table working with <a href="http://microbit.org/">Micro:bits</a> to see if we could figure out how fast a fidget spinner was revolving. We were inspired from the May CoderDojo when we videoed a spinning and discovered <a href="https://twitter.com/damianpayton/status/864544739600760832">weird effects from the phone camera</a>.</p>
+<p>We tried two approaches: 1) Building a strobe light and 2) Using a light detector to sense the arms moving.</p>
+<h2>Installing the Software</h2>
+<p>These instructions have only been tried out on Windows. Linux and Mac users will have to find equivalent software.</p>
+<p>The three things you need to install are</p>
+<div class="highlight"><pre><span></span>1. The windows serial drivers for the Micro:bit
+2. The Mu programming environment
+3. The Serial Oscilloscope tool
+</pre></div>
+
+
+<p>Links to the software here:</p>
+<script src="https://gist.github.com/davegoopot/08b0d1148b3550fc8350a754e74a8f8c.js"></script>
+
+<h2>Micro:bit Powered Strobe Light</h2>
+<p>We built a strobe light from the Micro:bit and an LED. To be able to see the strobe effect on the fidget spinner you need to find somewhere really dark to run the experiment. Once you have somewhere dark enough the strobe effect does work well to apparently slowdown the spinner.</p>
+<p>Here's the circuit diagram:</p>
+<p>SORT OUT https://twitter.com/barney1312589/status/873842055398789120</p>
+<p>Take a look at @barney1312589's Tweet: https://twitter.com/barney1312589/status/873842055398789120?s=09</p>
+<p>And here's the code. You will need to experiment with the number of flashes per second. A value in the range 30-60 worked well for us.</p>
+<script src="https://gist.github.com/davegoopot/33d2535e6f0a5047cb77fca2e349db56.js"></script>
+
+<h2>Fidget Spinner Oscilloscope Visualisation</h2>
+<p>Next we built a light detector and attached it to the oscilloscope to visualise the arms of the fidget spinner rotating. You can see the results on this <a href="https://twitter.com/SharpFutures/status/873893052795977732">video posted on Twitter</a>.</p>
+<p>Here's the circuit diagram. The resistor pictured is too small. You should use a 1-5 kilo-ohms resistor to get a decent range of values reported from the detector.</p>
+<p>Here's the circuit:</p>
+<p>TODO</p>
+<p>And here's the code:</p>
+<script src="https://gist.github.com/davegoopot/83b692608059addfa10e8d0eb7745dc3.js"></script>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66545314-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>
