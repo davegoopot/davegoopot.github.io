@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Passing the Google Mobile Site Test - Step 2 - Fix "Content Wider Than Screen" Error</title>
+        <title>Python Snippet to Hash Email Addresses</title>
         <link rel="stylesheet" href="http://www.davepotts.software/theme/css/main.css" />
 
         <!--[if IE]>
@@ -18,34 +18,43 @@
                     <li><a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a></li>
                     <li><a href="http://www.davepotts.software/category/google.html">Google</a></li>
                     <li><a href="http://www.davepotts.software/category/misc.html">Misc</a></li>
-                    <li><a href="http://www.davepotts.software/category/python.html">Python</a></li>
+                    <li class="active"><a href="http://www.davepotts.software/category/python.html">Python</a></li>
                     <li><a href="http://www.davepotts.software/category/science.html">Science</a></li>
-                    <li class="active"><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
+                    <li><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://www.davepotts.software/passing-the-google-mobile-site-test-step-2-fix-content-wider-than-screen-error.html" rel="bookmark"
-           title="Permalink to Passing the Google Mobile Site Test - Step 2 - Fix "Content Wider Than Screen" Error">Passing the Google Mobile Site Test - Step 2 - Fix "Content Wider Than Screen" Error</a></h1>
+        <a href="http://www.davepotts.software/python-snippet-to-hash-email-addresses.html" rel="bookmark"
+           title="Permalink to Python Snippet to Hash Email Addresses">Python Snippet to Hash Email Addresses</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2017-05-10T21:00:00+01:00">
-                Published: Wed 10 May 2017
+        <abbr class="published" title="2017-11-27T22:30:00+00:00">
+                Published: Mon 27 November 2017
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
         </address>
-<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+<p>In <a href="http://www.davepotts.software/category/python.html">Python</a>.</p>
 
-</footer><!-- /.post-info -->      <p>I'm working to get this blog site to pass the <a href="https://search.google.com/search-console/mobile-friendly">Google mobile friendly site test</a>. In the <a href="http://www.davepotts.software/passing-the-google-mobile-site-test-step-1-viewport-metatag.html">last post</a> I fixed the viewport. In this post I'm going to fix the "Content wider than screen" warning.</p>
-<p>Switching Chrome into developer tools mode (press F12 on Windows), and choosing the device emulator, the problem becomes clear with the page scrolling beyond the right edge of the screen.</p>
-<p>Continuing to use the Chrome dev tools I start looking for the styling culprit. A quick scan finds several <code>width: 800px;</code> attributes set in the style sheets. Looking at how the page works it is clear that <code>max-width</code> is more appropriate than forcing a width value. I did a find and replace in all my css template files to replace <code>width</code> with <code>max-width</code>.</p>
-<p>A quick commit and republish and the page looks fine on mobile and Google has given me <a href="https://search.google.com/search-console/mobile-friendly?id=OjYOxYg_o8RJhJtNtEUKkA">a tick in the box</a>. </p>
+</footer><!-- /.post-info -->      <p>I wanted to process some email address data today but hide the real email addresses. 
+To do that I chose to run the SHA-256 hash over the email address data. Here's the python
+snippet I used to convert the plain emails to the hashed versions (ignoring any emails 
+with anything other than ASCII characters for simplicity):</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="n">plain_emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;user1@address1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;user2@address2&quot;</span><span class="p">,</span>
+                <span class="p">]</span>
+
+<span class="n">hashed_emails</span> <span class="o">=</span> <span class="p">[</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">mail</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s2">&quot;ascii&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+                 <span class="k">for</span> <span class="n">mail</span> <span class="ow">in</span> <span class="n">plain_emails</span><span class="p">]</span>
+</pre></div>
     </div><!-- /.entry-content -->
 
   </article>
