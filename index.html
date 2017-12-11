@@ -26,7 +26,32 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.davepotts.software/python-snippet-to-hash-email-addresses.html">Python Snippet to Hash Email Addresses</a></h1>
+                    <h1 class="entry-title"><a href="http://www.davepotts.software/manchester-coderdojo-christmas-video-2017.html">Manchester CoderDojo Christmas Video 2017</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-12-11T22:20:00+00:00">
+                Published: Mon 11 December 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+        </address>
+<p>In <a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a>.</p>
+
+</footer><!-- /.post-info --><p>It was the last <a href="http://mcrcoderdojo.org.uk/">Manchester CoderDojo</a> of 2017 this Sunday. Continuing the tradition from last year we got the
+whole event together to make a Christmas video. You can see the results here: https://youtu.be/A3eQ8ROCevA</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.davepotts.software/python-snippet-to-hash-email-addresses.html" rel="bookmark"
+                           title="Permalink to Python Snippet to Hash Email Addresses">Python Snippet to Hash Email Addresses</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-11-27T22:30:00+00:00">
                 Published: Mon 27 November 2017
@@ -37,24 +62,13 @@
         </address>
 <p>In <a href="http://www.davepotts.software/category/python.html">Python</a>.</p>
 
-</footer><!-- /.post-info --><p>I wanted to process some email address data today but hide the real email addresses. 
+</footer><!-- /.post-info -->                <p>I wanted to process some email address data today but hide the real email addresses. 
 To do that I chose to run the SHA-256 hash over the email address data. Here's the python
 snippet I used to convert the plain emails to the hashed versions (ignoring any emails 
-with anything other than ASCII characters for simplicity):</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
-
-<span class="n">plain_emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;user1@address1&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;user2@address2&quot;</span><span class="p">,</span>
-                <span class="p">]</span>
-
-<span class="n">hashed_emails</span> <span class="o">=</span> <span class="p">[</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">mail</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s2">&quot;ascii&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
-                 <span class="k">for</span> <span class="n">mail</span> <span class="ow">in</span> <span class="n">plain_emails</span><span class="p">]</span>
-</pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+with ...</p>
+                <a class="readmore" href="http://www.davepotts.software/python-snippet-to-hash-email-addresses.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -243,28 +257,6 @@ if you tried to load the site without the "www." you ended up at a domain parkin
 </footer><!-- /.post-info -->                <p>I've been working with the kids on an experiment to try to show whether "<a href="https://en.wikipedia.org/wiki/Pump_(skateboarding)">pumping</a>" has any measurable effect on skateboarding down a ramp. The set up reminded me of the old ticker tape experiments we used to do at school. This being the 21st
 century we've upgraded ...</p>
                 <a class="readmore" href="http://www.davepotts.software/youtube-is-the-new-ticker-tape.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.davepotts.software/google-optimize-gotchas.html" rel="bookmark"
-                           title="Permalink to Google Optimize Gotchas">Google Optimize Gotchas</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-04-15T21:30:00+01:00">
-                Published: Sat 15 April 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
-
-</footer><!-- /.post-info -->                <p>I've been experimenting with <a href="https://www.google.com/analytics/optimize/">Google Optimize</a> and have tripped up a couple of times. First I made the assumption that Google Tag Manager would be the best way to implement the experiments. Second I didn't appreciate the linkages needed through to Google Analytics required to make Optimize work ...</p>
-                <a class="readmore" href="http://www.davepotts.software/google-optimize-gotchas.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
