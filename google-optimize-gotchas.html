@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Google Optimize Gotchas</title>
-        <link rel="stylesheet" href="http://www.davepotts.software/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -13,21 +13,21 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="http://www.davepotts.software/">Dave Potts - Software </a></h1>
+                <h1><a href="/">Dave Potts - Software </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.davepotts.software/category/coderdojo.html">CoderDojo</a></li>
-                    <li><a href="http://www.davepotts.software/category/google.html">Google</a></li>
-                    <li><a href="http://www.davepotts.software/category/misc.html">Misc</a></li>
-                    <li><a href="http://www.davepotts.software/category/python.html">Python</a></li>
-                    <li><a href="http://www.davepotts.software/category/science.html">Science</a></li>
-                    <li class="active"><a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a></li>
+                    <li><a href="/category/coderdojo.html">CoderDojo</a></li>
+                    <li><a href="/category/google.html">Google</a></li>
+                    <li><a href="/category/misc.html">Misc</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                    <li><a href="/category/science.html">Science</a></li>
+                    <li class="active"><a href="/category/web-dev.html">Web Dev</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://www.davepotts.software/google-optimize-gotchas.html" rel="bookmark"
+        <a href="/google-optimize-gotchas.html" rel="bookmark"
            title="Permalink to Google Optimize Gotchas">Google Optimize Gotchas</a></h1>
     </header>
 
@@ -38,9 +38,9 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="http://www.davepotts.software/author/dave-potts.html">Dave Potts</a>
+                By                         <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
         </address>
-<p>In <a href="http://www.davepotts.software/category/web-dev.html">Web Dev</a>.</p>
+<p>In <a href="/category/web-dev.html">Web Dev</a>.</p>
 
 </footer><!-- /.post-info -->      <p>I've been experimenting with <a href="https://www.google.com/analytics/optimize/">Google Optimize</a> and have tripped up a couple of times. First I made the assumption that Google Tag Manager would be the best way to implement the experiments. Second I didn't appreciate the linkages needed through to Google Analytics required to make Optimize work.</p>
 <h2>Don't Implement Using Google Tag Manager</h2>
@@ -48,7 +48,7 @@
 <h2>Set Up Your Goals in Google Analytics First</h2>
 <p>Not being a heavy Google Analytics, 'GA', user I didn't realise the extent that Optimize depended on GA. Optimize really only implements the page variant delivery part of the testing. All the heavy lifting for the analysis of the results is run in GA. Before you try to set up your experiment in Optimize you should set up your goals in GA. See <a href="https://support.google.com/analytics/answer/1012040">here</a> for how to set up goals. Once you have your goals in GA then you will be able to link your experiment to the achievement of the goals.</p>
 <h2>Try Out My Experiment</h2>
-<p>As discussed <a href="http://www.davepotts.software/first-experiment-with-google-optimize.html">previously</a>, feel free to <a href="https://nifty-bank.glitch.me/">try out the experiment</a>. The red pill is the baseline and the blue pill is the variant.</p>
+<p>As discussed <a href="/first-experiment-with-google-optimize.html">previously</a>, feel free to <a href="https://nifty-bank.glitch.me/">try out the experiment</a>. The red pill is the baseline and the blue pill is the variant.</p>
     </div><!-- /.entry-content -->
 
   </article>
