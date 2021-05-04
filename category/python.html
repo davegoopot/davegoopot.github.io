@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dave Potts - Software - Python</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dave Potts - Software - Python</title>
+    <link rel="stylesheet" href="/theme/css/main.css" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <!--[if IE]>
+      <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Dave Potts - Software </a></h1>
-                <nav><ul>
-                    <li><a href="/category/coderdojo.html">CoderDojo</a></li>
-                    <li><a href="/category/google.html">Google</a></li>
-                    <li><a href="/category/misc.html">Misc</a></li>
-                    <li class="active"><a href="/category/python.html">Python</a></li>
-                    <li><a href="/category/science.html">Science</a></li>
-                    <li><a href="/category/web-dev.html">Web Dev</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <body id="index" class="home">
+    <header id="banner" class="body">
+      <h1><a href="/">Dave Potts - Software </a></h1>
+      <nav>
+        <ul>
+          <li><a href="/category/coderdojo.html">CoderDojo</a></li>
+          <li><a href="/category/google.html">Google</a></li>
+          <li><a href="/category/misc.html">Misc</a></li>
+          <li class="active"><a href="/category/python.html">Python</a></li>
+          <li><a href="/category/science.html">Science</a></li>
+          <li><a href="/category/web-dev.html">Web Dev</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- /#banner -->
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/python-snippet-to-hash-email-addresses.html">Python Snippet to Hash Email Addresses</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2017-11-27T22:30:00+00:00">
-                Published: Mon 27 November 2017
-        </abbr>
+    <aside id="featured" class="body">
+      <article>
+        <h1 class="entry-title">
+          <a href="/python-snippet-to-hash-email-addresses.html"
+            >Python Snippet to Hash Email Addresses</a
+          >
+        </h1>
+        <footer class="post-info">
+          <abbr class="published" title="2017-11-27T22:30:00+00:00">
+            Published: Mon 27 November 2017
+          </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="/category/python.html">Python</a>.</p>
-
-</footer><!-- /.post-info --><p>I wanted to process some email address data today but hide the real email addresses. 
-To do that I chose to run the SHA-256 hash over the email address data. Here's the python
-snippet I used to convert the plain emails to the hashed versions (ignoring any emails 
-with anything other than ASCII characters for simplicity):</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+          <address class="vcard author">
+            By <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
+          </address>
+          <p>In <a href="/category/python.html">Python</a>.</p>
+        </footer>
+        <!-- /.post-info -->
+        <p>
+          I wanted to process some email address data today but hide the real
+          email addresses. To do that I chose to run the SHA-256 hash over the
+          email address data. Here's the python snippet I used to convert the
+          plain emails to the hashed versions (ignoring any emails with anything
+          other than ASCII characters for simplicity):
+        </p>
+        <div class="highlight">
+          <pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
 
 <span class="n">plain_emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;user1@address1&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;user2@address2&quot;</span><span class="p">,</span>
@@ -49,83 +61,137 @@ with anything other than ASCII characters for simplicity):</p>
 
 <span class="n">hashed_emails</span> <span class="o">=</span> <span class="p">[</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">mail</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s2">&quot;ascii&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
                  <span class="k">for</span> <span class="n">mail</span> <span class="ow">in</span> <span class="n">plain_emails</span><span class="p">]</span>
-</pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</pre>
+        </div>
+      </article>
+    </aside>
+    <!-- /#featured -->
+    <section id="content" class="body">
+      <h1>Other articles</h1>
+      <hr />
+      <ol id="posts-list" class="hfeed">
+        <li>
+          <article class="hentry">
+            <header>
+              <h1>
+                <a
+                  href="/a-local-facsimile-for-pythonanywhere-environment.html"
+                  rel="bookmark"
+                  title="Permalink to A Local Facsimile for PythonAnywhere Environment"
+                  >A Local Facsimile for PythonAnywhere Environment</a
+                >
+              </h1>
+            </header>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/a-local-facsimile-for-pythonanywhere-environment.html" rel="bookmark"
-                           title="Permalink to A Local Facsimile for PythonAnywhere Environment">A Local Facsimile for PythonAnywhere Environment</a></h1>
-                </header>
+            <div class="entry-content">
+              <footer class="post-info">
+                <abbr class="published" title="2017-03-31T18:15:00+01:00">
+                  Published: Fri 31 March 2017
+                </abbr>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-03-31T18:15:00+01:00">
-                Published: Fri 31 March 2017
-        </abbr>
+                <address class="vcard author">
+                  By
+                  <a class="url fn" href="/author/dave-potts.html"
+                    >Dave Potts</a
+                  >
+                </address>
+                <p>In <a href="/category/python.html">Python</a>.</p>
+              </footer>
+              <!-- /.post-info -->
+              <p>
+                I love working with
+                <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>
+                ...except when I'm on a train. Even with the web-based consoles,
+                trying to work with mobile data signal going in and out is
+                impossible.
+              </p>
+              <p>
+                I decided that I needed an environment I could run locally that
+                would be close enough to PythonAnywhere that when ...
+              </p>
+              <a
+                class="readmore"
+                href="/a-local-facsimile-for-pythonanywhere-environment.html"
+                >read more</a
+              >
+            </div>
+            <!-- /.entry-content -->
+          </article>
+        </li>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="/category/python.html">Python</a>.</p>
+        <li>
+          <article class="hentry">
+            <header>
+              <h1>
+                <a
+                  href="/makefile-targets-for-setting-up-virtualenvwrapper.html"
+                  rel="bookmark"
+                  title="Permalink to Makefile Targets for Setting up Virtualenvwrapper"
+                  >Makefile Targets for Setting up Virtualenvwrapper</a
+                >
+              </h1>
+            </header>
 
-</footer><!-- /.post-info -->                <p>I love working with <a href="https://www.pythonanywhere.com/">PythonAnywhere</a> ...except when I'm on a train. Even with the web-based 
-consoles, trying to work with mobile data signal going in and out is impossible.</p>
-<p>I decided that I needed an environment I could run locally that would be close enough to PythonAnywhere that when ...</p>
-                <a class="readmore" href="/a-local-facsimile-for-pythonanywhere-environment.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+            <div class="entry-content">
+              <footer class="post-info">
+                <abbr class="published" title="2017-01-07T20:00:00+00:00">
+                  Published: Sat 07 January 2017
+                </abbr>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/makefile-targets-for-setting-up-virtualenvwrapper.html" rel="bookmark"
-                           title="Permalink to Makefile Targets for Setting up Virtualenvwrapper">Makefile Targets for Setting up Virtualenvwrapper</a></h1>
-                </header>
+                <address class="vcard author">
+                  By
+                  <a class="url fn" href="/author/dave-potts.html"
+                    >Dave Potts</a
+                  >
+                </address>
+                <p>In <a href="/category/python.html">Python</a>.</p>
+              </footer>
+              <!-- /.post-info -->
+              <p>
+                I use
+                <a href="https://virtualenvwrapper.readthedocs.io"
+                  >Virtualenvwrapper</a
+                >
+                to isolate individual python projects. I could never remember
+                the commands to set up a new project, so I created a makefile to
+                do the work.
+              </p>
+              <p>
+                Copy the code below, change "put-your-name-here" to whatever you
+                want to call your virtual environment, set up a requirements.txt
+                file ...
+              </p>
+              <a
+                class="readmore"
+                href="/makefile-targets-for-setting-up-virtualenvwrapper.html"
+                >read more</a
+              >
+            </div>
+            <!-- /.entry-content -->
+          </article>
+        </li>
+      </ol>
+      <!-- /#posts-list -->
+    </section>
+    <!-- /#content -->
+    <section id="extras" class="body"></section>
+    <!-- /#extras -->
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-01-07T20:00:00+00:00">
-                Published: Sat 07 January 2017
-        </abbr>
+    <footer id="contentinfo" class="body">
+      <address id="about" class="vcard body">
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which
+        takes great advantage of <a href="http://python.org">Python</a>.
+      </address>
+      <!-- /#about -->
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="/category/python.html">Python</a>.</p>
-
-</footer><!-- /.post-info -->                <p>I use <a href="https://virtualenvwrapper.readthedocs.io">Virtualenvwrapper</a> to isolate individual python projects.
-I could never remember the commands to set up a new project, so I created a makefile to do the work.</p>
-<p>Copy the code below, change "put-your-name-here" to whatever you want to call your virtual environment,
-set up a requirements.txt file ...</p>
-                <a class="readmore" href="/makefile-targets-for-setting-up-virtualenvwrapper.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-66545314-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-</body>
+      <p>
+        The theme is by
+        <a
+          href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"
+          >Smashing Magazine</a
+        >, thanks!
+      </p>
+    </footer>
+    <!-- /#contentinfo -->
+  </body>
 </html>

@@ -1,78 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Google Optimize Gotchas</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Optimize Gotchas</title>
+    <link rel="stylesheet" href="/theme/css/main.css" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <!--[if IE]>
+      <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Dave Potts - Software </a></h1>
-                <nav><ul>
-                    <li><a href="/category/coderdojo.html">CoderDojo</a></li>
-                    <li><a href="/category/google.html">Google</a></li>
-                    <li><a href="/category/misc.html">Misc</a></li>
-                    <li><a href="/category/python.html">Python</a></li>
-                    <li><a href="/category/science.html">Science</a></li>
-                    <li class="active"><a href="/category/web-dev.html">Web Dev</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/google-optimize-gotchas.html" rel="bookmark"
-           title="Permalink to Google Optimize Gotchas">Google Optimize Gotchas</a></h1>
+  <body id="index" class="home">
+    <header id="banner" class="body">
+      <h1><a href="/">Dave Potts - Software </a></h1>
+      <nav>
+        <ul>
+          <li><a href="/category/coderdojo.html">CoderDojo</a></li>
+          <li><a href="/category/google.html">Google</a></li>
+          <li><a href="/category/misc.html">Misc</a></li>
+          <li><a href="/category/python.html">Python</a></li>
+          <li><a href="/category/science.html">Science</a></li>
+          <li class="active"><a href="/category/web-dev.html">Web Dev</a></li>
+        </ul>
+      </nav>
     </header>
+    <!-- /#banner -->
+    <section id="content" class="body">
+      <article>
+        <header>
+          <h1 class="entry-title">
+            <a
+              href="/google-optimize-gotchas.html"
+              rel="bookmark"
+              title="Permalink to Google Optimize Gotchas"
+              >Google Optimize Gotchas</a
+            >
+          </h1>
+        </header>
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-04-15T21:30:00+01:00">
-                Published: Sat 15 April 2017
-        </abbr>
+        <div class="entry-content">
+          <footer class="post-info">
+            <abbr class="published" title="2017-04-15T21:30:00+01:00">
+              Published: Sat 15 April 2017
+            </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="/category/web-dev.html">Web Dev</a>.</p>
+            <address class="vcard author">
+              By <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
+            </address>
+            <p>In <a href="/category/web-dev.html">Web Dev</a>.</p>
+          </footer>
+          <!-- /.post-info -->
+          <p>
+            I've been experimenting with
+            <a href="https://www.google.com/analytics/optimize/"
+              >Google Optimize</a
+            >
+            and have tripped up a couple of times. First I made the assumption
+            that Google Tag Manager would be the best way to implement the
+            experiments. Second I didn't appreciate the linkages needed through
+            to Google Analytics required to make Optimize work.
+          </p>
+          <h2>Don't Implement Using Google Tag Manager</h2>
+          <p>
+            I'm completely sold on the benefits of using Google Tag Manager,
+            'GTM', for managing tag deployment on pages. Consequently when it
+            came to putting Optimize tags on to my experimental site GTM was the
+            obvious option. More, with a quick search I found that there was a
+            pre-baked Optimize tag already for me on GTM. I quickly found the
+            problem with this setup: nasty screen flicker as the page loaded
+            with the original version and Optimize then chose to deploy the
+            experimental variant. Google is aware of this problem and recommends
+            that you manually deploy the Optimize Javascript directly on to your
+            pages. Once I stopped the GTM tag and directly changed the page the
+            flicker went away. See
+            <a
+              href="https://support.google.com/360suite/optimize/answer/7359264"
+              >https://support.google.com/360suite/optimize/answer/7359264</a
+            >.
+          </p>
+          <h2>Set Up Your Goals in Google Analytics First</h2>
+          <p>
+            Not being a heavy Google Analytics, 'GA', user I didn't realise the
+            extent that Optimize depended on GA. Optimize really only implements
+            the page variant delivery part of the testing. All the heavy lifting
+            for the analysis of the results is run in GA. Before you try to set
+            up your experiment in Optimize you should set up your goals in GA.
+            See
+            <a href="https://support.google.com/analytics/answer/1012040"
+              >here</a
+            >
+            for how to set up goals. Once you have your goals in GA then you
+            will be able to link your experiment to the achievement of the
+            goals.
+          </p>
+          <h2>Try Out My Experiment</h2>
+          <p>
+            As discussed
+            <a href="/first-experiment-with-google-optimize.html">previously</a
+            >, feel free to
+            <a href="https://nifty-bank.glitch.me/">try out the experiment</a>.
+            The red pill is the baseline and the blue pill is the variant.
+          </p>
+        </div>
+        <!-- /.entry-content -->
+      </article>
+    </section>
+    <section id="extras" class="body"></section>
+    <!-- /#extras -->
 
-</footer><!-- /.post-info -->      <p>I've been experimenting with <a href="https://www.google.com/analytics/optimize/">Google Optimize</a> and have tripped up a couple of times. First I made the assumption that Google Tag Manager would be the best way to implement the experiments. Second I didn't appreciate the linkages needed through to Google Analytics required to make Optimize work.</p>
-<h2>Don't Implement Using Google Tag Manager</h2>
-<p>I'm completely sold on the benefits of using Google Tag Manager, 'GTM', for managing tag deployment on pages. Consequently when it came to putting Optimize tags on to my experimental site GTM was the obvious option. More, with a quick search I found that there was a pre-baked Optimize tag already for me on GTM. I quickly found the problem with this setup: nasty screen flicker as the page loaded with the original version and Optimize then chose to deploy the experimental variant. Google is aware of this problem and recommends  that you manually deploy the Optimize Javascript directly on to your pages. Once I stopped the GTM tag and directly changed the page the flicker went away. See <a href="https://support.google.com/360suite/optimize/answer/7359264">https://support.google.com/360suite/optimize/answer/7359264</a>.</p>
-<h2>Set Up Your Goals in Google Analytics First</h2>
-<p>Not being a heavy Google Analytics, 'GA', user I didn't realise the extent that Optimize depended on GA. Optimize really only implements the page variant delivery part of the testing. All the heavy lifting for the analysis of the results is run in GA. Before you try to set up your experiment in Optimize you should set up your goals in GA. See <a href="https://support.google.com/analytics/answer/1012040">here</a> for how to set up goals. Once you have your goals in GA then you will be able to link your experiment to the achievement of the goals.</p>
-<h2>Try Out My Experiment</h2>
-<p>As discussed <a href="/first-experiment-with-google-optimize.html">previously</a>, feel free to <a href="https://nifty-bank.glitch.me/">try out the experiment</a>. The red pill is the baseline and the blue pill is the variant.</p>
-    </div><!-- /.entry-content -->
+    <footer id="contentinfo" class="body">
+      <address id="about" class="vcard body">
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which
+        takes great advantage of <a href="http://python.org">Python</a>.
+      </address>
+      <!-- /#about -->
 
-  </article>
-</section>
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-66545314-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-</body>
+      <p>
+        The theme is by
+        <a
+          href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"
+          >Smashing Magazine</a
+        >, thanks!
+      </p>
+    </footer>
+    <!-- /#contentinfo -->
+  </body>
 </html>

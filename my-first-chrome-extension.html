@@ -1,82 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My First Chrome Extension</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Chrome Extension</title>
+    <link rel="stylesheet" href="/theme/css/main.css" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <!--[if IE]>
+      <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Dave Potts - Software </a></h1>
-                <nav><ul>
-                    <li><a href="/category/coderdojo.html">CoderDojo</a></li>
-                    <li><a href="/category/google.html">Google</a></li>
-                    <li><a href="/category/misc.html">Misc</a></li>
-                    <li><a href="/category/python.html">Python</a></li>
-                    <li><a href="/category/science.html">Science</a></li>
-                    <li class="active"><a href="/category/web-dev.html">Web Dev</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/my-first-chrome-extension.html" rel="bookmark"
-           title="Permalink to My First Chrome Extension">My First Chrome Extension</a></h1>
+  <body id="index" class="home">
+    <header id="banner" class="body">
+      <h1><a href="/">Dave Potts - Software </a></h1>
+      <nav>
+        <ul>
+          <li><a href="/category/coderdojo.html">CoderDojo</a></li>
+          <li><a href="/category/google.html">Google</a></li>
+          <li><a href="/category/misc.html">Misc</a></li>
+          <li><a href="/category/python.html">Python</a></li>
+          <li><a href="/category/science.html">Science</a></li>
+          <li class="active"><a href="/category/web-dev.html">Web Dev</a></li>
+        </ul>
+      </nav>
     </header>
+    <!-- /#banner -->
+    <section id="content" class="body">
+      <article>
+        <header>
+          <h1 class="entry-title">
+            <a
+              href="/my-first-chrome-extension.html"
+              rel="bookmark"
+              title="Permalink to My First Chrome Extension"
+              >My First Chrome Extension</a
+            >
+          </h1>
+        </header>
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-04-10T19:00:00+01:00">
-                Published: Mon 10 April 2017
-        </abbr>
+        <div class="entry-content">
+          <footer class="post-info">
+            <abbr class="published" title="2017-04-10T19:00:00+01:00">
+              Published: Mon 10 April 2017
+            </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
-        </address>
-<p>In <a href="/category/web-dev.html">Web Dev</a>.</p>
+            <address class="vcard author">
+              By <a class="url fn" href="/author/dave-potts.html">Dave Potts</a>
+            </address>
+            <p>In <a href="/category/web-dev.html">Web Dev</a>.</p>
+          </footer>
+          <!-- /.post-info -->
+          <p>
+            In order to learn how to write chrome extensions I wanted to write
+            an extension that would display the title from the current page in a
+            popup like this:
+          </p>
+          <p>
+            <img
+              alt="Screenshot of Chrome Extension"
+              src="/images/2017-04-08-chrome-ext.png"
+            />
+          </p>
+          <p>
+            The first thing to work out about Chrome extensions is the context
+            within which they run. There are two cases. First there is the code
+            running in the context of Chrome extensions. In this context you can
+            access information about browser things, e.g. names of tabs, access
+            bookmarks etc. And this is the context in which to make UI
+            interactions such as showing popups. Second there is the DOM of the
+            loaded page. The access of extensions to the DOM is tightly
+            separated from the wider Chrome extension context.
+          </p>
+          <p>
+            I need to access the page's DOM in order to read the title element.
+            To do this I use the
+            <a
+              href="https://developer.chrome.com/extensions/tabs#method-executeScript"
+              >chrome.tabs.executeScript</a
+            >
+            method which lets you inject some javascript code into a page, let
+            it run in the context of the page's DOM, and register a callback to
+            receive the results. The code I inject is then just a very simple
+            access of the title element
+            <code>document.getElementsByTagName('title')[0].text;</code>. The
+            only other wrinkle to take care of is that this code must not run
+            until the <code>DOMContentLoaded</code> event has been fired
+            indicating that the browser has built the DOM tree.
+          </p>
+          <p>Here's the full list of files needed ot make this work...</p>
+          <ol>
+            <li>
+              manifest.json -- the Chrome extension manifest file describing how
+              the extension works
+            </li>
+            <li>
+              popup.html -- a very simple page that the Chrome extension uses to
+              display the title
+            </li>
+            <li>
+              popup.js -- the javascript file that makes the call to grab the
+              title element
+            </li>
+          </ol>
+          <script src="https://gist.github.com/davegoopot/dbadfe0be39e74ccb0971e94368fdde7.js"></script>
+        </div>
+        <!-- /.entry-content -->
+      </article>
+    </section>
+    <section id="extras" class="body"></section>
+    <!-- /#extras -->
 
-</footer><!-- /.post-info -->      <p>In order to learn how to write chrome extensions I wanted to write an extension that would display the title from the current page in a popup like this:</p>
-<p><img alt="Screenshot of Chrome Extension" src="/images/2017-04-08-chrome-ext.png" /></p>
-<p>The first thing to work out about Chrome extensions is the context within which they run. There are two cases. First there is the code running in the context of Chrome extensions. In this context you can access information about browser things, e.g. names of tabs, access bookmarks etc. And this is the context in which to make UI interactions such as showing popups. Second there is the DOM of the loaded page. The access of extensions to the DOM is tightly separated from the wider Chrome extension context.</p>
-<p>I need to access the page's DOM in order to read the title element. To do this I use the <a href="https://developer.chrome.com/extensions/tabs#method-executeScript">chrome.tabs.executeScript</a> method which lets you inject some javascript code into a page, let it run in the context of the page's DOM, and register a callback to receive the results. The code I inject is then just a very simple access of the title element <code>document.getElementsByTagName('title')[0].text;</code>. The only other wrinkle to take care of is that this code must not run until the <code>DOMContentLoaded</code> event has been fired indicating that the browser has built the DOM tree.</p>
-<p>Here's the full list of files needed ot make this work...</p>
-<ol>
-<li>manifest.json -- the Chrome extension manifest file describing how the extension works</li>
-<li>popup.html -- a very simple page that the Chrome extension uses to display the title</li>
-<li>popup.js -- the javascript file that makes the call to grab the title element</li>
-</ol>
-<script src="https://gist.github.com/davegoopot/dbadfe0be39e74ccb0971e94368fdde7.js"></script>
-    </div><!-- /.entry-content -->
+    <footer id="contentinfo" class="body">
+      <address id="about" class="vcard body">
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which
+        takes great advantage of <a href="http://python.org">Python</a>.
+      </address>
+      <!-- /#about -->
 
-  </article>
-</section>
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-66545314-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-</body>
+      <p>
+        The theme is by
+        <a
+          href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"
+          >Smashing Magazine</a
+        >, thanks!
+      </p>
+    </footer>
+    <!-- /#contentinfo -->
+  </body>
 </html>
