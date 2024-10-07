@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - test
 
 jobs:
   build:
@@ -24,8 +25,20 @@ jobs:
       - name: Build the site
         run: bundle exec jekyll build
 
+      - name: Test the site
+        run: docker run --rm -v "$PWD:/srv/jekyll" -it jekyll/jekyll jekyll doctor
+
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+
+      - name: Deploy to GitHub Pages (Test Branch)
+        if: github.ref == 'refs/heads/test'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages-test
