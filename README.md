@@ -79,3 +79,7 @@ You can use GitHub Codespace to test the Jekyll changes before merging to the ma
    bundle exec jekyll serve --host 0.0.0.0
    ```
 4. The site will be available at `http://localhost:4000`. Open this URL in your web browser to preview the changes.
+
+## Important Note
+
+The `_config.yml` file must be located in the root directory of the repository for the Jekyll site to function correctly. Ensure that the `_config.yml` file is in the root directory before running the Jekyll build and tests.
