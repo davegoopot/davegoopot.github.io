@@ -1,0 +1,9 @@
+{
+  "name": "Jekyll Codespace",
+  "image": "mcr.microsoft.com/vscode/devcontainers/ruby:2.7",
+  "postCreateCommand": "bundle install",
+  "forwardPorts": [4000],
+  "extensions": [
+    "rebornix.Ruby"
+  ]
+}
