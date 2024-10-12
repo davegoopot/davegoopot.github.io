@@ -64,3 +64,18 @@ Make sure you have the following installed on your local machine:
    ```
 
    The test branch will be published to the GitHub Pages site under the branch URL. You can manually check the resulting site before merging the changes to master.
+
+## Using GitHub Codespace for Testing Jekyll Changes
+
+You can use GitHub Codespace to test the Jekyll changes before merging to the master branch. Follow the steps below:
+
+1. Open the repository in GitHub Codespace.
+2. Once the Codespace is ready, run the following command to build the Jekyll site:
+   ```sh
+   bundle exec jekyll build
+   ```
+3. Serve the site locally to preview the changes:
+   ```sh
+   bundle exec jekyll serve --host 0.0.0.0
+   ```
+4. The site will be available at `http://localhost:4000`. Open this URL in your web browser to preview the changes.
