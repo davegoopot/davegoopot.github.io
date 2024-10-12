@@ -450,3 +450,28 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	
 	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 	#add-comment * {margin-bottom: .5em;}
+
+/* Post styles */
+.post {
+    margin-bottom: 2em;
+}
+
+.post-title {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.post-meta {
+    font-size: 0.875em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.post-author {
+    font-weight: bold;
+}
+
+.post-content {
+    font-size: 1.125em;
+    line-height: 1.6;
+}
