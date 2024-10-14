@@ -1,1 +1,3 @@
 title: "Dave Potts - Software"
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title.html
