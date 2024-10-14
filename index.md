@@ -1,13 +1,14 @@
 ---
 layout: default
-title: Home
+title: "Home"
 ---
 
-<section>
+<h1>Recent Posts</h1>
+<ul>
   {% for post in site.posts %}
-    <article>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt }}</p>
-    </article>
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%B %d, %Y" }}</span>
+    </li>
   {% endfor %}
-</section>
+</ul>
