@@ -3,8 +3,8 @@ layout: default
 title: "Home"
 ---
 
-<h1>Recent Posts</h1>
 <div class="articles-list">
+<h1>Recent Posts</h1>
   <ul>
     {% for post in site.posts %}
       <li>
