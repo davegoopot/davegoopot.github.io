@@ -475,3 +475,8 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
     font-size: 1.125em;
     line-height: 1.6;
 }
+
+/* Articles list */
+.articles-list {
+    background-color: #FFFFFF;
+}
