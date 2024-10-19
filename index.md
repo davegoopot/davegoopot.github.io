@@ -1,16 +1,15 @@
 ---
 layout: default
-title: "Home"
+title: "{{ site.posts.first.title }}"
 ---
 
 <div class="articles-list">
-<h1>Recent Posts</h1>
   <ul>
     {% for post in site.posts %}
       <li>
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
         <p>{{ post.date | date: "%B %d, %Y" }}</p>
-        <p>{{ post.excerpt }}</p>
+        <p>{{ post.excerpt | truncatewords: 50 }}</p>
       </li>
     {% endfor %}
   </ul>
