@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "{{ site.posts.first.title }}"
+title: "Dave Potts - Software"
 ---
 
 <div class="articles-list">
