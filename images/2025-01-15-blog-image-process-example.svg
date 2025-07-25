@@ -1,0 +1,69 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .handwritten { font-family: "Comic Sans MS", cursive; font-size: 14px; fill: #333; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .box { fill: none; stroke: #333; stroke-width: 2; }
+      .title { font-family: "Comic Sans MS", cursive; font-size: 18px; fill: #333; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#fefefe" stroke="#ddd" stroke-width="1"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" class="title" text-anchor="middle">Blog Image Process</text>
+  
+  <!-- Step 1: Paper & Phone -->
+  <rect x="50" y="60" width="100" height="60" class="box" rx="5"/>
+  <text x="100" y="80" class="handwritten" text-anchor="middle">1. Draw on</text>
+  <text x="100" y="95" class="handwritten" text-anchor="middle">Paper</text>
+  <text x="100" y="110" class="handwritten" text-anchor="middle">📱 Photo</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="150" y1="90" x2="190" y2="90" class="arrow"/>
+  
+  <!-- Step 2: Transfer -->
+  <rect x="200" y="60" width="100" height="60" class="box" rx="5"/>
+  <text x="250" y="80" class="handwritten" text-anchor="middle">2. Transfer</text>
+  <text x="250" y="95" class="handwritten" text-anchor="middle">to Computer</text>
+  <text x="250" y="110" class="handwritten" text-anchor="middle">☁️ Cloud</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="300" y1="90" x2="340" y2="90" class="arrow"/>
+  
+  <!-- Step 3: Optimize -->
+  <rect x="350" y="60" width="100" height="60" class="box" rx="5"/>
+  <text x="400" y="80" class="handwritten" text-anchor="middle">3. Optimize</text>
+  <text x="400" y="95" class="handwritten" text-anchor="middle">Size & Quality</text>
+  <text x="400" y="110" class="handwritten" text-anchor="middle">🔧 Tools</text>
+  
+  <!-- Arrow down -->
+  <line x1="400" y1="120" x2="400" y2="160" class="arrow"/>
+  
+  <!-- Step 4: Include -->
+  <rect x="350" y="170" width="100" height="60" class="box" rx="5"/>
+  <text x="400" y="190" class="handwritten" text-anchor="middle">4. Include</text>
+  <text x="400" y="205" class="handwritten" text-anchor="middle">in Blog Post</text>
+  <text x="400" y="220" class="handwritten" text-anchor="middle">📝 Markdown</text>
+  
+  <!-- Arrow to result -->
+  <line x1="350" y1="200" x2="290" y2="200" class="arrow"/>
+  
+  <!-- Result -->
+  <rect x="50" y="170" width="240" height="60" class="box" rx="5"/>
+  <text x="170" y="190" class="handwritten" text-anchor="middle">✅ Published Blog Post</text>
+  <text x="170" y="205" class="handwritten" text-anchor="middle">with Beautiful Diagram</text>
+  <text x="170" y="220" class="handwritten" text-anchor="middle">Fast & Accessible</text>
+  
+  <!-- Tips box -->
+  <rect x="50" y="270" width="500" height="100" class="box" rx="5" stroke-dasharray="5,5"/>
+  <text x="70" y="290" class="handwritten" font-weight="bold">💡 Pro Tips:</text>
+  <text x="70" y="310" class="handwritten">• Use good lighting when photographing</text>
+  <text x="70" y="325" class="handwritten">• Keep file names descriptive (YYYY-MM-DD-description.jpg)</text>
+  <text x="70" y="340" class="handwritten">• Always include alt text for accessibility</text>
+  <text x="70" y="355" class="handwritten">• Test on mobile devices</text>
+</svg>
