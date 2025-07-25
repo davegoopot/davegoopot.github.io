@@ -16,7 +16,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bundle install"
+	"postCreateCommand": "gem install --user-install jekyll && echo 'export PATH=\"/home/runner/.local/share/gem/ruby/3.2.0/bin:$PATH\"' >> ~/.bashrc"
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
