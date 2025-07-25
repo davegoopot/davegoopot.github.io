@@ -4,13 +4,90 @@ This document outlines a simple process for taking a hand-drawn diagram on paper
 
 ## Overview
 
-The process involves four main steps:
+This guide covers two approaches:
+
+### Mobile-First Approach (Recommended for Android users)
+Commit directly from your phone to GitHub, skipping the computer entirely:
+1. **Capture** - Take a photo of your hand-drawn diagram
+2. **Upload & Commit** - Use GitHub Mobile app, web interface, or git client to add directly to repository
+
+### Traditional Desktop Approach
+The comprehensive four-step process:
 1. **Capture** - Take a photo of your hand-drawn diagram
 2. **Transfer** - Get the image from your phone to your computer/repository
 3. **Optimize** - Prepare the image for web use
 4. **Include** - Add the image to your blog post
 
 ## Step-by-Step Process
+
+### Mobile-First Workflow (Direct from Android Phone)
+
+If you want to streamline the process and commit directly from your Android phone, here are several options:
+
+#### Option 1: GitHub Mobile App (Simplest)
+1. **Capture** your diagram photo as usual
+2. **Open GitHub Mobile app** on your phone
+3. **Navigate** to your repository
+4. **Tap the "+" button** → "Upload files"
+5. **Select** your diagram photo
+6. **Choose** the `images/` folder
+7. **Add commit message** like "Add diagram for [post topic]"
+8. **Commit directly** to your branch
+
+#### Option 2: GitHub Web Interface (Mobile Browser)
+1. **Capture** your diagram photo
+2. **Open** github.com in your mobile browser
+3. **Navigate** to your repository's `images/` folder
+4. **Tap "Add file"** → "Upload files"
+5. **Select** your photo and commit
+
+#### Option 3: Termux + Git CLI (Most Powerful)
+For advanced users who want full git functionality on Android:
+
+1. **Install Termux** from F-Droid or Google Play
+2. **Install git and gh CLI** in Termux:
+   ```bash
+   pkg install git gh
+   ```
+3. **Clone your repository**:
+   ```bash
+   git clone https://github.com/yourusername/yourrepo.git
+   cd yourrepo
+   ```
+4. **Set up authentication** with GitHub CLI:
+   ```bash
+   gh auth login
+   ```
+5. **Copy your photo** to the Termux storage (enable storage access first):
+   ```bash
+   termux-setup-storage
+   cp /sdcard/DCIM/Camera/your-photo.jpg images/
+   ```
+6. **Optimize image** (install imagemagick if needed):
+   ```bash
+   pkg install imagemagick
+   convert your-photo.jpg -resize 1200x1200> -quality 85 optimized-photo.jpg
+   ```
+7. **Commit and push**:
+   ```bash
+   git add images/optimized-photo.jpg
+   git commit -m "Add diagram for blog post"
+   git push
+   ```
+
+#### Option 4: MGit or Pocket Git Apps
+Install a dedicated Git client like MGit or Pocket Git:
+1. **Clone** your repository in the app
+2. **Use the app's file manager** to add your photo to `images/`
+3. **Stage, commit, and push** through the app interface
+
+#### Mobile Workflow Considerations:
+- **File naming**: Use descriptive names like `2025-01-15-workflow-diagram.jpg`
+- **Image optimization**: Consider using apps like "Photo Compress 2.0" before uploading
+- **Alt text planning**: Note down what alt text you'll use in your blog post
+- **Repository organization**: Keep the `images/` folder organized with date-based naming
+
+### Traditional Desktop Workflow
 
 ### 1. Capture the Diagram
 
@@ -156,4 +233,35 @@ This diagram helped me identify bottlenecks in my current process...
 - Test locally with `jekyll serve` before pushing to GitHub
 - Images are cached by browsers - use different filenames for updated versions
 
-This process balances simplicity with quality, allowing you to quickly capture and share your hand-drawn diagrams while maintaining good web practices.
+## Recommended Mobile Tools for Android
+
+### Essential Apps:
+- **GitHub Mobile** - Official GitHub app for basic file uploads
+- **Termux** - Terminal emulator for full git functionality
+- **Photo Compress 2.0** - Optimize images before upload
+- **MGit** or **Pocket Git** - Dedicated Android git clients
+
+### Browser Bookmarks:
+- Your repository's `images/` folder on github.com for quick uploads
+- GitHub's "Create new file" page for adding new blog posts
+
+### Termux Setup Commands:
+```bash
+# Initial setup
+pkg install git gh imagemagick
+gh auth login
+termux-setup-storage
+
+# Clone your repo (one time)
+git clone https://github.com/yourusername/yourrepo.git
+cd yourrepo
+
+# Daily workflow
+cp /sdcard/DCIM/Camera/photo.jpg images/
+convert photo.jpg -resize 1200x1200> -quality 85 optimized.jpg
+git add images/optimized.jpg
+git commit -m "Add diagram for post"
+git push
+```
+
+This process balances simplicity with quality, allowing you to quickly capture and share your hand-drawn diagrams while maintaining good web practices. The mobile-first approach is especially powerful for Android users who want to maintain their entire blogging workflow on-the-go.

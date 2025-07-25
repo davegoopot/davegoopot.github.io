@@ -105,7 +105,27 @@ Before publishing your post with images:
 **Image too large:**
 - Optimize with TinyPNG or similar tool
 - Resize to 800-1200px width maximum
+- For mobile users: Use Termux with imagemagick: `convert image.jpg -resize 1200x1200> -quality 85 optimized.jpg`
 
 **Poor mobile display:**
 - Always include `max-width: 100%` in styling
 - Test on mobile devices or browser dev tools
+
+## Mobile-First Workflow
+
+**Quick upload from Android:**
+1. GitHub Mobile app → Repository → "+" → Upload files → Select images folder
+2. Or use Termux terminal:
+   ```bash
+   cp /sdcard/DCIM/Camera/photo.jpg images/2025-01-15-diagram.jpg
+   git add images/2025-01-15-diagram.jpg
+   git commit -m "Add diagram"
+   git push
+   ```
+
+**File naming for mobile:**
+Use descriptive names that are easy to type on mobile:
+- `2025-01-15-workflow.jpg` ✓
+- `IMG_20250115_143022.jpg` ✗ (too generic)
+
+See [Mobile Workflow Guide](mobile-workflow-guide.md) for complete setup instructions.
