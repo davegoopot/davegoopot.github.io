@@ -1,0 +1,11 @@
+# CodeQL configuration to disable automatic scanning
+# This file disables CodeQL scanning since there is no Ruby code to analyze
+# (only Jekyll build setup which doesn't require security scanning)
+
+name: "Disable CodeQL for Jekyll-only repository"
+disable-default-setup: true
+query-filters:
+  - exclude:
+      query-path: "/**/*"
+paths-ignore:
+  - "**/*"

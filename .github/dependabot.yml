@@ -1,6 +1,4 @@
 version: 2
-updates:
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+updates: []
+# Removed bundler ecosystem since there are no Ruby dependencies (Gemfile) to manage
+# Ruby is only used for Jekyll build process
