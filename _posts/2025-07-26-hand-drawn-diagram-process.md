@@ -5,15 +5,13 @@ categories: development
 tags: Jekyll, GitHub Pages, blogging, documentation, workflow
 ---
 
-As a developer and blogger, I often find myself sketching ideas on paper to work through complex concepts. These hand-drawn diagrams are incredibly useful for thinking through problems, but I've always struggled with getting them into my blog posts in a clean, efficient way.
-
-After some experimentation, I've developed a simple four-step process that gets me from paper sketch to published blog post quickly and consistently.
+Here's what GitHub Copilot came up with for getting images into blog posts. I'm going to give it a go with the Android GitHub client.
 
 ## The Challenge
 
 I wanted a process that would:
 - Work with basic tools (just a phone and computer)
-- Produce good-quality images suitable for web
+- Produce good-quality images suitable for the web
 - Be fast enough that I wouldn't avoid doing it
 - Result in accessible, professional-looking posts
 
@@ -21,7 +19,7 @@ I wanted a process that would:
 
 Here's a visual overview of the process I've developed:
 
-![Blog image process diagram showing four steps: capture, transfer, optimize, and include, with tips for each stage](/images/2025-07-26-blog-image-process-example.svg)
+![Blog image process diagram showing four steps: capture, transfer, optimise, and include, with tips for each stage](/images/2025-07-26-blog-image-process-example.svg)
 
 ### 1. Capture
 
@@ -31,13 +29,13 @@ I use my phone's camera to photograph the diagram. The key is good lighting and 
 
 I upload the photo to Google Drive from my phone, then download it to my computer. This preserves image quality better than emailing it to myself.
 
-### 3. Optimize
+### 3. Optimise
 
 I use an online tool like TinyPNG to compress the image, aiming for under 500KB. I also crop out unnecessary background and adjust brightness if needed.
 
 ### 4. Include
 
-I save the optimized image in my Jekyll site's `/images/` directory and reference it in my markdown with proper alt text.
+I save the optimised image in my Jekyll site's `/images/` directory and reference it in my markdown with proper alt text.
 
 ## Why This Works
 
@@ -70,7 +68,7 @@ For quick reference when adding images to your posts, check out the [Image Templ
 I'm planning to experiment with:
 - Using a dedicated document scanning app for even better quality
 - Creating templates for common diagram types
-- Exploring automated image optimization in my Jekyll build process
+- Exploring automated image optimisation in my Jekyll build process
 
 The goal is always the same: remove friction from the process of sharing ideas through visual content.
 
