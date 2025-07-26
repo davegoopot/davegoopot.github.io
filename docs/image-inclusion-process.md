@@ -7,9 +7,9 @@ This document outlines a simple process for taking a hand-drawn diagram on paper
 This guide covers two approaches:
 
 ### Mobile-First Approach (For Android users)
-Commit directly from your phone to GitHub, skipping the computer entirely:
+Commit directly from your phone to GitHub using Termux, skipping the computer entirely:
 1. **Capture** - Take a photo of your hand-drawn diagram
-2. **Upload & Commit** - Use web interface or git client to add directly to repository
+2. **Upload & Commit** - Use Termux git client to add directly to repository
 
 ### Traditional Desktop Approach
 The comprehensive four-step process:
@@ -22,16 +22,9 @@ The comprehensive four-step process:
 
 ### Mobile-First Workflow (Direct from Android Phone)
 
-If you want to streamline the process and commit directly from your Android phone, here are the recommended options:
+If you want to streamline the process and commit directly from your Android phone using Termux:
 
-#### Option 1: GitHub Web Interface (Mobile Browser)
-1. **Capture** your diagram photo
-2. **Open** github.com in your mobile browser
-3. **Navigate** to your repository's `images/` folder
-4. **Tap "Add file"** → "Upload files"
-5. **Select** your photo and commit
-
-#### Option 2: Termux + Git CLI (Most Powerful)
+#### Termux + Git CLI (Full Mobile Development Environment)
 For advanced users who want full git functionality on Android:
 
 1. **Install Termux** from F-Droid or Google Play
@@ -65,7 +58,7 @@ For advanced users who want full git functionality on Android:
    git push
    ```
 
-#### Option 3: MGit or Pocket Git Apps
+#### Alternative: MGit or Pocket Git Apps
 Install a dedicated Git client like MGit or Pocket Git:
 1. **Clone** your repository in the app
 2. **Use the app's file manager** to add your photo to `images/`
@@ -226,13 +219,9 @@ This diagram helped me identify bottlenecks in my current process...
 ## Recommended Mobile Tools for Android
 
 ### Essential Apps:
-- **Termux** - Terminal emulator for full git functionality
+- **Termux** - Terminal emulator for full git functionality and mobile development
 - **Photo Compress 2.0** - Optimize images before upload
-- **MGit** or **Pocket Git** - Dedicated Android git clients
-
-### Browser Bookmarks:
-- Your repository's `images/` folder on github.com for quick uploads
-- GitHub's "Create new file" page for adding new blog posts
+- **MGit** or **Pocket Git** - Alternative dedicated Android git clients (if you prefer GUI)
 
 ### Termux Setup Commands:
 ```bash
