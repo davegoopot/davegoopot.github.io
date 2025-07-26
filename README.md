@@ -74,7 +74,7 @@ For a complete guide on including hand-drawn diagrams and other images in your b
 - Troubleshooting common issues
 
 **📱 [Mobile Workflow Guide](docs/mobile-workflow-guide.md)** - Complete setup for Android users who want to commit directly from their phone:
-- GitHub Mobile app usage
+- GitHub web interface usage
 - Termux terminal setup for full git functionality
 - Daily workflow examples
 - Pro tips and troubleshooting

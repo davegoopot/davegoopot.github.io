@@ -114,7 +114,7 @@ Before publishing your post with images:
 ## Mobile-First Workflow
 
 **Quick upload from Android:**
-1. GitHub Mobile app → Repository → "+" → Upload files → Select images folder
+1. Web interface → github.com → Repository → Navigate to images folder → "Add file" → "Upload files"
 2. Or use Termux terminal:
    ```bash
    cp /sdcard/DCIM/Camera/photo.jpg images/2025-01-15-diagram.jpg
