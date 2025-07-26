@@ -99,4 +99,3 @@ git push
 
 TBC
 
-**Verdict**: Termux is a game-changer for mobile blogging. While it requires a bit more setup than a simple app, the power and flexibility make it worth the effort.
