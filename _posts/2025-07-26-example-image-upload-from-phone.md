@@ -20,7 +20,7 @@ This post serves as a test case for that workflow - from concept to sketch to pu
 ## Image Placeholder
 
 <!-- TODO: Replace this placeholder with the actual image upload -->
-![Diagram from phone - placeholder for image upload](../images/placeholder-phone-diagram.png)
+![Diagram from phone - placeholder for image upload](../images/2025-07-26-placeholder-phone-diagram.png)
 *Caption: This will be replaced with an actual diagram uploaded from my phone*
 
 ## Why This Matters
