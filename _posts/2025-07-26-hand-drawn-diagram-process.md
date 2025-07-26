@@ -21,7 +21,7 @@ I wanted a process that would:
 
 Here's a visual overview of the process I've developed:
 
-![Blog image process diagram showing four steps: capture, transfer, optimize, and include, with tips for each stage](/images/2025-01-15-blog-image-process-example.svg)
+![Blog image process diagram showing four steps: capture, transfer, optimize, and include, with tips for each stage](/images/2025-07-26-blog-image-process-example.svg)
 
 ### 1. Capture
 
