@@ -57,8 +57,27 @@ The site follows standard Jekyll conventions:
 - `_config.yml` - Site configuration
 - `_layouts/` - Page templates
 - `_posts/` - Blog posts
+- `images/` - Image assets for blog posts
+- `docs/` - Documentation and guides
 - `index.md` - Homepage
 - Static HTML files for individual pages
+
+## Content Creation
+
+### Adding Images to Blog Posts
+
+For a complete guide on including hand-drawn diagrams and other images in your blog posts, see the [Image Inclusion Process Guide](docs/image-inclusion-process.md). This covers the complete workflow from paper sketch to published blog post, including:
+
+- Photography best practices
+- Image optimization techniques
+- Jekyll-specific implementation details
+- Troubleshooting common issues
+
+**📱 [Mobile Workflow Guide](docs/mobile-workflow-guide.md)** - Complete setup for Android users who want to commit directly from their phone:
+- GitHub Mobile app usage
+- Termux terminal setup for full git functionality
+- Daily workflow examples
+- Pro tips and troubleshooting
 
 ## Important Notes
 
