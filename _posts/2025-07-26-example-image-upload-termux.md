@@ -97,35 +97,6 @@ git push
 
 ## How Did It Go?
 
-**Much better than the GitHub Android app!** Here's what worked:
-
-1. ✅ **Full git functionality** - Unlike the GitHub app, Termux gives you complete git access
-2. ✅ **File system access** - Easy to copy images from camera folder
-3. ✅ **Command line control** - Can rename files, organize folders, and write proper commit messages
-4. ✅ **Image optimization** - Can install ImageMagick to compress images if needed
-5. ✅ **Complete workflow** - Can write entire blog posts, not just upload files
-
-### Workflow Comparison
-
-| Feature | GitHub Android App | Termux |
-|---------|-------------------|---------|
-| Upload files | ❌ (couldn't find option) | ✅ Easy |
-| Rename files | ❌ | ✅ Full control |
-| Organize folders | ❌ | ✅ Complete |
-| Commit messages | ❌ | ✅ Descriptive |
-| Image optimization | ❌ | ✅ ImageMagick available |
-| Write posts | ❌ | ✅ Full text editing |
-
-## Next Steps
-
-This Termux setup opens up a completely mobile blogging workflow. I can now:
-
-- Sketch diagrams on paper
-- Photograph them with my phone
-- Upload and commit them via Termux
-- Write entire blog posts on my phone
-- Publish everything without touching a computer
-
-For a more detailed guide on daily usage and advanced tips, see the [Mobile Workflow Guide](../../docs/mobile-workflow-guide.html) in the documentation.
+TBC
 
 **Verdict**: Termux is a game-changer for mobile blogging. While it requires a bit more setup than a simple app, the power and flexibility make it worth the effort.
