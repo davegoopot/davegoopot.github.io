@@ -5,7 +5,7 @@ categories: development
 tags: Jekyll, GitHub Pages, blogging, documentation, workflow
 ---
 
-Here's what GitHub Copilot came up with for getting images into blog posts. I'm going to give it a go with the Android GitHub client.
+Here's what GitHub Copilot initially suggested for getting images into blog posts. However, testing showed that the Android GitHub client doesn't support direct file uploads, so I'll be exploring alternative approaches like Termux.
 
 ## The Challenge
 

@@ -113,15 +113,13 @@ Before publishing your post with images:
 
 ## Mobile-First Workflow
 
-**Quick upload from Android:**
-1. GitHub Mobile app → Repository → "+" → Upload files → Select images folder
-2. Or use Termux terminal:
-   ```bash
-   cp /sdcard/DCIM/Camera/photo.jpg images/2025-01-15-diagram.jpg
-   git add images/2025-01-15-diagram.jpg
-   git commit -m "Add diagram"
-   git push
-   ```
+**Quick upload from Android using Termux:**
+```bash
+cp /sdcard/DCIM/Camera/photo.jpg images/2025-01-15-diagram.jpg
+git add images/2025-01-15-diagram.jpg
+git commit -m "Add diagram"
+git push
+```
 
 **File naming for mobile:**
 Use descriptive names that are easy to type on mobile:
