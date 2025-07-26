@@ -59,9 +59,9 @@ Here's how I used this process for a recent diagram about API design patterns. T
 
 ## The Complete Process Guide
 
-I've documented the complete process with step-by-step instructions, troubleshooting tips, and best practices. You can find it in the [Image Inclusion Process Guide](/docs/image-inclusion-process.md).
+I've documented the complete process with step-by-step instructions, troubleshooting tips, and best practices. You can find it in the [Image Inclusion Process Guide](https://github.com/davegoopot/davegoopot.github.io/blob/master/docs/image-inclusion-process.md).
 
-For quick reference when adding images to your posts, check out the [Image Template Guide](/docs/image-template.md) with copy-paste examples and best practices.
+For quick reference when adding images to your posts, check out the [Image Template Guide](https://github.com/davegoopot/davegoopot.github.io/blob/master/docs/image-template.md) with copy-paste examples and best practices.
 
 ## Next Steps
 
