@@ -5,7 +5,7 @@ categories: blogging
 tags: mobile, diagrams, workflow, images, termux, git
 ---
 
-After my [previous attempt with the GitHub Android app didn't work](../2025/07/26/example-image-upload-from-phone.html), I decided to try Termux - a powerful terminal emulator for Android that gives you full git functionality.
+After my [previous attempt with the GitHub Android app didn't work](example-image-upload-from-phone.html), I decided to try Termux - a powerful terminal emulator for Android that gives you full git functionality.
 
 This post demonstrates the complete workflow from first-time setup to uploading images directly from my phone to this blog.
 
@@ -92,7 +92,7 @@ git push
 
 ## The Result
 
-![Termux workflow diagram showing successful mobile git workflow](../images/2025-07-26-termux-workflow-diagram.jpg)
+![Termux workflow diagram showing successful mobile git workflow](/images/2025-07-26-termux-workflow-diagram.jpg)
 *Caption: Hand-drawn diagram uploaded successfully using Termux.*
 
 ## How Did It Go?
