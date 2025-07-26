@@ -21,7 +21,7 @@ This post demonstrates the complete workflow from first-time setup to uploading 
 pkg update && pkg upgrade
 
 # Install essential tools
-pkg install git gh openssh
+pkg install git gh openssh termux-api
 
 # Set up storage access (grant permission when prompted)
 termux-setup-storage
@@ -70,9 +70,12 @@ Now for the actual workflow demonstration. I drew a quick diagram on paper and p
 # Navigate to the repository
 cd davegoopot.github.io
 
-# Copy image from camera folder to images directory
-cp /sdcard/DCIM/Camera/IMG_20250726_120000.jpg images/2025-07-26-termux-workflow-diagram.jpg
+# Use termux-storage-get to select and copy image from storage
+# This opens a file picker interface
+termux-storage-get images/2025-07-26-termux-workflow-diagram.jpg
 ```
+
+The `termux-storage-get` command opens a file picker where you can browse and select your image from anywhere on your device - camera folder, downloads, or any other location. It's much more user-friendly than navigating file paths manually.
 
 ### Step 2: Commit and Push
 
