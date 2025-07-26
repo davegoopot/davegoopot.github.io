@@ -4,11 +4,11 @@ This guide shows you how to set up your Android phone to commit images and blog 
 
 ## Quick Setup (One-Time)
 
-### Option 1: GitHub Mobile App (Easiest)
-1. Install **GitHub Mobile** from Google Play Store
-2. Sign in with your GitHub account
-3. Navigate to your blog repository
-4. You're ready to upload images!
+### Option 1: GitHub Web Interface (Easiest)
+1. Open your mobile browser
+2. Navigate to github.com and sign in
+3. Bookmark your blog repository for quick access
+4. You're ready to upload images via the web interface!
 
 ### Option 2: Termux Terminal (Most Powerful)
 1. Install **Termux** from F-Droid (recommended) or Google Play
@@ -23,11 +23,11 @@ This guide shows you how to set up your Android phone to commit images and blog 
 
 ## Daily Workflow
 
-### Using GitHub Mobile App
+### Using GitHub Web Interface
 1. **Capture** your hand-drawn diagram
-2. **Open GitHub Mobile** → Your repository
-3. **Tap "+"** → "Upload files"
-4. **Navigate to `images/`** folder
+2. **Open mobile browser** → github.com → Your repository
+3. **Navigate to `images/`** folder
+4. **Tap "Add file"** → "Upload files"
 5. **Select your photo** and add descriptive filename
 6. **Write commit message**: "Add diagram for [topic]"
 7. **Commit to main branch**
@@ -99,11 +99,12 @@ alias addimg='git add images/ && git commit -m "Add images" && git push'
 alias newpost='cp _posts/template.md _posts/$(date +%Y-%m-%d)-new-post.md'
 ```
 
-### GitHub Mobile Limits
+### GitHub Web Interface Considerations
 - File uploads limited to 25MB per file
 - No batch operations
 - Limited file organization features
 - Best for single image uploads
+- Works on any mobile browser
 
 ### Termux Advantages
 - Full git functionality
