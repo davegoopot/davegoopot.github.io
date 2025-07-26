@@ -28,9 +28,9 @@ If you want to streamline the process and commit directly from your Android phon
 For advanced users who want full git functionality on Android:
 
 1. **Install Termux** from F-Droid or Google Play
-2. **Install git and gh CLI** in Termux:
+2. **Install git, gh CLI, and termux-api** in Termux:
    ```bash
-   pkg install git gh
+   pkg install git gh termux-api
    ```
 3. **Clone your repository**:
    ```bash
@@ -44,7 +44,8 @@ For advanced users who want full git functionality on Android:
 5. **Copy your photo** to the Termux storage (enable storage access first):
    ```bash
    termux-setup-storage
-   cp /sdcard/DCIM/Camera/your-photo.jpg images/
+   # Use termux-storage-get to select and copy your photo from Android storage
+   termux-storage-get images/your-photo.jpg
    ```
 6. **Optimize image** (install imagemagick if needed):
    ```bash
@@ -226,7 +227,7 @@ This diagram helped me identify bottlenecks in my current process...
 ### Termux Setup Commands:
 ```bash
 # Initial setup
-pkg install git gh imagemagick
+pkg install git gh termux-api imagemagick
 gh auth login
 termux-setup-storage
 
@@ -235,7 +236,8 @@ git clone https://github.com/yourusername/yourrepo.git
 cd yourrepo
 
 # Daily workflow
-cp /sdcard/DCIM/Camera/photo.jpg images/
+# Copy your photo using termux-storage-get (opens Android file picker)
+termux-storage-get images/photo.jpg
 convert photo.jpg -resize 1200x1200> -quality 85 optimized.jpg
 git add images/optimized.jpg
 git commit -m "Add diagram for post"
