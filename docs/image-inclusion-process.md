@@ -44,7 +44,9 @@ For advanced users who want full git functionality on Android:
 5. **Copy your photo** to the Termux storage (enable storage access first):
    ```bash
    termux-setup-storage
+   # Common Android storage paths (use the one that works on your device):
    cp /sdcard/DCIM/Camera/your-photo.jpg images/
+   # Alternative paths: /storage/emulated/0/DCIM/Camera/ or /storage/self/primary/DCIM/Camera/
    ```
 6. **Optimize image** (install imagemagick if needed):
    ```bash
@@ -235,7 +237,9 @@ git clone https://github.com/yourusername/yourrepo.git
 cd yourrepo
 
 # Daily workflow
+# Copy your photo (use the storage path that works on your device)
 cp /sdcard/DCIM/Camera/photo.jpg images/
+# Alternative paths: /storage/emulated/0/DCIM/Camera/ or /storage/self/primary/DCIM/Camera/
 convert photo.jpg -resize 1200x1200> -quality 85 optimized.jpg
 git add images/optimized.jpg
 git commit -m "Add diagram for post"
