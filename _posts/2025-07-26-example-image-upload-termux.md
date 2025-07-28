@@ -99,4 +99,4 @@ git push
 
 1. The upload from the phone was simple enough.
 2. The Copilot got the path of the image user wrong at the first attempt. It fixed it with a quick issue and pull request.
-4. But the image sizing was all wrong. I'm going to raise a ticket for the Copilot to fix that. 
+4. But the image sizing was all wrong. I'm going to raise a ticket for the Copilot to fix that. **Copilot fixed the image sizing with CSS. Looks good.**
