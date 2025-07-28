@@ -92,7 +92,7 @@ git push
 
 ## The Result
 
-![Termux workflow diagram showing successful mobile git workflow](../images/2025-07-26-termux-workflow-diagram.jpg)
+![Termux workflow diagram showing successful mobile git workflow](/images/2025-07-26-termux-workflow-diagram.jpg)
 *Caption: Hand-drawn diagram uploaded successfully using Termux.*
 
 ## How Did It Go?
