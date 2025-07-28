@@ -477,6 +477,17 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
     line-height: 1.6;
 }
 
+/* Responsive images in post content */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 /* Articles list */
 .articles-list {
     background-color: #FFFFFF;
