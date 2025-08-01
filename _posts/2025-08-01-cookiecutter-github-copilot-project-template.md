@@ -124,8 +124,8 @@ When suggesting code:
 Once your template is ready, using it is simple:
 
 ```bash
-# Install cookiecutter
-pip install cookiecutter
+# Install cookiecutter using uv (fast Python package installer)
+uv tool install cookiecutter
 
 # Generate a project from your template
 cookiecutter path/to/your/template
