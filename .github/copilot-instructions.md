@@ -10,7 +10,7 @@ This is a Jekyll-based software blog hosted on GitHub Pages. When contributing t
 - **GitHub Pages**: Automatically builds and deploys from the main branch
 
 ## Content Guidelines
-- Blog posts should focus on software development, programming, and technical topics
+- Keep the posts really short. The intended audience is highly technical and short on time. Don't explain basic concepts. Prefer links to reference material. 
 - Use clear, concise writing appropriate for a technical audience
 - Follow existing post structure with proper YAML front matter including title, categories, and tags
 - Images should be optimized and placed in the `images/` directory
