@@ -35,48 +35,4 @@ my-project-template/
 }
 ```
 
-## VS Code Integration
-
-`.vscode/settings.json`:
-```json
-{
-    "python.defaultInterpreterPath": "./venv/bin/python",
-    "python.formatting.provider": "black",
-    "python.linting.enabled": true,
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": false,
-        "plaintext": false
-    }
-}
-```
-
-`.vscode/copilot-instructions.md`:
-```markdown
-# Copilot Instructions for {% raw %}{{ cookiecutter.project_name }}{% endraw %}
-
-## Project Context
-{% raw %}{{ cookiecutter.description }}{% endraw %} - Python {% raw %}{{ cookiecutter.python_version }}{% endraw %}
-
-## Standards
-- PEP 8, type hints, docstrings
-- Functions <20 lines, single responsibility
-- AAA test pattern, >90% coverage
-
-## Code Suggestions
-- Include error handling and logging
-- Use dependency injection
-- Follow existing patterns
-```
-
-## Usage
-
-```bash
-# Install with uv
-uv tool install cookiecutter
-
-# Generate project
-cookiecutter https://github.com/yourusername/your-template.git
-```
-
-The result: a project with immediate Copilot context, consistent configuration, and zero setup time.
+For detailed information on creating repository custom instructions, see the [GitHub documentation](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions#creating-a-repository-custom-instructions-file).
