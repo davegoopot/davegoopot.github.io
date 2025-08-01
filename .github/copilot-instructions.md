@@ -12,6 +12,7 @@ This is a Jekyll-based software blog hosted on GitHub Pages. When contributing t
 ## Content Guidelines
 - Keep the posts really short. The intended audience is highly technical and short on time. Don't explain basic concepts. Prefer links to reference material. 
 - Use clear, concise writing appropriate for a technical audience
+- Use UK British English spelling and style.
 - Follow existing post structure with proper YAML front matter including title, categories, and tags
 - Images should be optimized and placed in the `images/` directory
 
