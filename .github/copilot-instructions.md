@@ -13,6 +13,7 @@ This is a Jekyll-based software blog hosted on GitHub Pages. When contributing t
 - Keep the posts really short. The intended audience is highly technical and short on time. Don't explain basic concepts. Prefer links to reference material. 
 - Use clear, concise writing appropriate for a technical audience
 - Use UK British English spelling and style.
+- The typical post starts as a description of what I'm planning to do. I publish that and then sometime later I update the same post with an experience report.
 - Follow existing post structure with proper YAML front matter including title, categories, and tags
 - Images should be optimized and placed in the `images/` directory
 
