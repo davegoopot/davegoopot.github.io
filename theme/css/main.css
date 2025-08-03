@@ -492,3 +492,18 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .articles-list {
     background-color: #FFFFFF;
 }
+
+/* Weather forecast iframes */
+.weather-forecast {
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Weather forecast day sections spacing */
+.post-content h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
