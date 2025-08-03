@@ -1,5 +1,7 @@
 # Copilot Instructions for Dave Potts Software Blog
 
+The deployed version of this site is at: https://davepotts.software/
+
 This is a Jekyll-based software blog hosted on GitHub Pages. When contributing to this repository, please follow these guidelines:
 
 ## Repository Structure
