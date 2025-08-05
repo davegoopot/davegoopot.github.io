@@ -17,3 +17,5 @@ The first attempt with Copilot resulted in it developing a vast and complex temp
 [cookiecutter-basic](https://github.com/davegoopot/cookiecutter-basic)
 
 I need to change the Copilot instructions to match my coding approach, keep it simple, before this is useful. 
+
+Here's what I've come up with [copilot-instructions.md](https://github.com/davegoopot/cookiecutter-basic/blob/main/%7B%7Bcookiecutter.project_slug%7D%7D/.github/copilot-instructions.md).
