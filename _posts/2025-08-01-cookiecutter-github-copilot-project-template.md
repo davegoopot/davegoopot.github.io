@@ -14,6 +14,6 @@ For detailed information on creating repository custom instructions, see the [Gi
 
 The first attempt with Copilot resulted in it developing a vast and complex template for a Python project. After calming it down with pull request comments I've managed to get the simple template I wanted.
 
-https://github.com/davegoopot/cookiecutter-basic
+[cookiecutter-basic](https://github.com/davegoopot/cookiecutter-basic)
 
 I need to change the Copilot instructions to match my coding approach, keep it simple, before this is useful. 
