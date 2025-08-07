@@ -10,6 +10,9 @@ A system for creating blog posts that starts with paper and pen and ends up publ
 
 ## System Overview
 
-*[System design diagram to be uploaded here]*
+
+
+![System block diagram](/images/2025-07-26-termux-workflow-diagram.jpg)
+
 
  
