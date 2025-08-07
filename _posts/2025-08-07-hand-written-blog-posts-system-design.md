@@ -12,7 +12,7 @@ A system for creating blog posts that starts with paper and pen and ends up publ
 
 
 
-![System block diagram](2025-08-07-pen-paper-blog.jpg)
+![System block diagram](/images/2025-08-07-pen-paper-blog.jpg)
 
 
  
