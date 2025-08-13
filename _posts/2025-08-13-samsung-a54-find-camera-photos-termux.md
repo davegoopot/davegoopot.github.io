@@ -7,50 +7,56 @@ tags: android, termux, samsung, camera, mobile-workflow
 
 Quick reference for Samsung A54 users working with Termux who need to locate camera-taken photos for their mobile blogging workflow.
 
-## TL;DR - The Commands
+## TL;DR - The Steps
 
 ```bash
-# Samsung A54 camera photos are typically here:
-ls /sdcard/DCIM/Camera/
+# 1. First, set up storage access in Termux:
+termux-setup-storage
+# (Grant permissions in the dialog that appears)
 
-# Copy latest photo to your blog images folder:
-cp /sdcard/DCIM/Camera/$(ls -t /sdcard/DCIM/Camera/ | head -1) images/2025-08-13-diagram.jpg
+# 2. Samsung A54 camera photos are then accessible here:
+ls ~/storage/dcim/Camera/
 
-# If using Samsung's enhanced camera features:
-ls /sdcard/DCIM/Camera/Pro/
-ls /sdcard/DCIM/Screenshots/
+# 3. Copy latest photo to your blog images folder:
+cp ~/storage/dcim/Camera/$(ls -t ~/storage/dcim/Camera/ | head -1) images/2025-08-13-diagram.jpg
 ```
+
+## Prerequisites: Storage Setup
+
+**Critical first step:** Termux needs storage permissions to access camera photos.
+
+```bash
+# Run this command first:
+termux-setup-storage
+```
+
+When the permissions dialog appears, make sure to grant Termux access to storage. Without this, you won't see any photos in the directories.
 
 ## Samsung A54 Specific Locations
 
-The Samsung A54 stores camera photos in several locations depending on camera mode and settings:
+After running `termux-setup-storage`, the Samsung A54 stores camera photos in these locations:
 
 **Standard camera photos:**
 ```bash
-/sdcard/DCIM/Camera/
-```
-
-**Pro mode or manual settings:**
-```bash
-/sdcard/DCIM/Camera/Pro/
+~/storage/dcim/Camera/
 ```
 
 **Screenshots (useful for capturing phone screens):**
 ```bash
-/sdcard/DCIM/Screenshots/
+~/storage/dcim/Screenshots/
 ```
 
 **Downloaded images from apps:**
 ```bash
-/sdcard/Download/
-/sdcard/Pictures/
+~/storage/downloads/
+~/storage/pictures/
 ```
 
 ## Quick File Browser
 
 ```bash
 # List all photo directories at once:
-for dir in /sdcard/DCIM/Camera /sdcard/DCIM/Screenshots /sdcard/Download /sdcard/Pictures; do
+for dir in ~/storage/dcim/Camera ~/storage/dcim/Screenshots ~/storage/downloads ~/storage/pictures; do
     echo "=== $dir ==="
     ls -lt "$dir" 2>/dev/null | head -3
     echo
@@ -63,7 +69,7 @@ Once you've located your photo, the standard [mobile workflow](../docs/mobile-wo
 
 ```bash
 cd davegoopot.github.io
-cp /sdcard/DCIM/Camera/20250813_143022.jpg images/2025-08-13-workflow-diagram.jpg
+cp ~/storage/dcim/Camera/20250813_143022.jpg images/2025-08-13-workflow-diagram.jpg
 git add images/2025-08-13-workflow-diagram.jpg
 git commit -m "Add workflow diagram"
 git push
@@ -71,9 +77,9 @@ git push
 
 ## Samsung A54 Gotchas
 
+- **Storage permission**: **Must** run `termux-setup-storage` first and grant permissions in the dialog
+- **Path confusion**: Don't use `/sdcard/` paths - use `~/storage/` after setup
 - **File naming**: Samsung uses `YYYYMMDD_HHMMSS.jpg` format
-- **Pro mode**: Creates larger files in a separate subfolder
-- **Burst photos**: Creates numbered sequences (IMG_001.jpg, IMG_002.jpg)
-- **Storage permission**: Ensure Termux has storage access via `termux-setup-storage`
+- **Empty directories**: If directories appear empty, check storage permissions again
 
-That's it. The Samsung A54 follows standard Android conventions, but knowing the exact paths saves time when you're working on mobile.
+That's it. The key is the `termux-setup-storage` step - without it, you won't see any photos even though they exist.
