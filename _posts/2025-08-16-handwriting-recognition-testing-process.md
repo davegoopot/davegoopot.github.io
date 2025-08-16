@@ -13,7 +13,7 @@ Simple three-step methodology for comparing handwriting recognition services:
 
 ### 1. Pick a Sample Image
 
-Using the [existing Termux workflow](samsung-a54-find-camera-photos-termux.html) to access camera photos:
+Using the [existing Termux workflow](/mobile/2025/08/13/samsung-a54-find-camera-photos-termux.html) to access camera photos:
 
 ```bash
 # Access latest handwritten sample
