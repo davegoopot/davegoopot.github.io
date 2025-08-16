@@ -21,18 +21,12 @@ ls ~/storage/dcim/Camera/
 cp ~/storage/dcim/Camera/$(ls -t ~/storage/dcim/Camera/ | head -1) sample-handwriting.jpg
 ```
 
-Focus on samples with varied characteristics:
-- Mixed print and cursive text
-- Technical diagrams with labels
-- Different pen types and paper textures
 
 ### 2. Document Manual Upload Steps
 
 For each online service tested, record:
 - Upload method (web interface, API, mobile app)
 - Image format requirements
-- Processing time
-- Cost per request
 - Authentication requirements
 
 ### 3. Report Back on Results
