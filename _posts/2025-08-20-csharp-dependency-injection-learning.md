@@ -7,7 +7,7 @@ tags: C#, dependency injection, console app, learning
 
 Quick planning post to write code to understand the C# dependency injection magic.
 
-See: https://github.com/davegoopot/csharp-depinj-example/
+See: [csharp-depinj-example](https://github.com/davegoopot/csharp-depinj-example/)
 
 Plan is to:
 
