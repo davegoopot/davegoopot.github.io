@@ -25,4 +25,4 @@ Here's what I've come up with [copilot-instructions.md](https://github.com/daveg
 
 My [copilot-instructions.md](https://github.com/davegoopot/cookiecutter-basic/blob/main/%7B%7Bcookiecutter.project_slug%7D%7D/.github/copilot-instructions.md) file changes frequently, since I'm just learning
 how to best code with Copilot. This results in a problem: Cookieuctter is designed to create new projects, but cannot update existing projects when the template changes. I'm going to 
-seek an alternative. Probably [Copier](https://copier.readthedocs.io/en/stable/).
+seek an alternative. Probably [Copier](https://copier.readthedocs.io/en/stable/updating/).
