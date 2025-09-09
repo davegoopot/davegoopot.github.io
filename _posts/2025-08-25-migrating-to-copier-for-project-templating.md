@@ -22,4 +22,8 @@ Cookiecutter excels at creating new projects but cannot update existing projects
 - [ ] **Apply To An Existing Project** - Test the converted template on an existing project created with the old Cookiecutter template
 - [ ] **Update The Template Then Reapply To A Project** - Verify the update workflow by modifying the template and applying changes to the existing project
 
+## Progress Report
+
+**Critical Note**: Remember to commit the created `.copier-answers.yml` file to git. Without this file committed, you cannot reapply template updates when the template changes. This answers file stores your original configuration choices and is essential for Copier's update functionality.
+
 Implementation details and results to follow.
