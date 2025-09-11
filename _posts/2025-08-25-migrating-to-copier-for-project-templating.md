@@ -33,4 +33,6 @@ Migration completed successfully. Key steps carried out:
    - Updated README.md and copilot-instructions.md to Copier style
    - Updated top-level README with Copier usage instructions
 
+**Critical Note**: Remember to commit the created `.copier-answers.yml` file to git. Without this file committed, you cannot reapply template updates when the template changes. This answers file stores your original configuration choices and is essential for Copier's update functionality.
+
 The template is now ready for use with Copier's updating capabilities.
