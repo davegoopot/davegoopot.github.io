@@ -2,16 +2,68 @@
 layout: post
 title: "How To Deploy Python To Raspberry Pis"
 categories: python
-tags: python, raspberry-pi, uv, pyproject.toml, azure-devops, deployment, automation
+tags: python, raspberry-pi, uv, pyproject.toml, ansible, tailscale, deployment, automation
 ---
 
-We build Python projects for data acquisition units running on Raspberry Pis. We need clear separation of build and release processes: an Azure DevOps pipeline produces build artefacts, then an automated release process deploys to multiple Pis.
+We build Python projects for data acquisition units running on Raspberry Pis. We need clear separation of build and release processes: develop on Windows, then use Ansible over Tailscale to deploy to multiple Pis securely without complex network configuration.
 
-## The Build Process
+## Prerequisites
 
-### Project Structure with uv
+### Set Up Windows Environment
 
-Using [uv](https://github.com/astral-sh/uv) for dependency management and `pyproject.toml` for configuration:
+Ansible requires Linux, so use **Windows Subsystem for Linux (WSL 2)**:
+
+```powershell
+# PowerShell as Administrator
+wsl --install
+```
+
+Install Ansible in WSL:
+
+```bash
+# In WSL terminal (Ubuntu)
+sudo apt update
+sudo apt install python3 python3-pip ansible -y
+```
+
+**Recommended**: Install Visual Studio Code with the **Remote - WSL** extension to edit files within WSL directly from Windows.
+
+### Set Up Tailscale for Secure Connectivity
+
+[Tailscale](https://tailscale.com/) creates a secure mesh network between your development machine and Raspberry Pis without port forwarding or VPN configuration.
+
+**On Windows (WSL)**:
+
+```bash
+# In WSL
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+```
+
+**On each Raspberry Pi**:
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+```
+
+After setup, devices appear on your Tailscale network with stable hostnames like `raspberrypi-1.tail12345.ts.net`.
+
+### Configure Passwordless SSH
+
+Generate SSH key in WSL and copy to each Pi:
+
+```bash
+# Generate key
+ssh-keygen -t rsa -b 4096
+
+# Copy to Pi (replace with your Pi's Tailscale hostname)
+ssh-copy-id pi@raspberrypi-1.tail12345.ts.net
+```
+
+## Project Structure with uv
+
+Using [uv](https://github.com/astral-sh/uv) for fast, reliable dependency management:
 
 ```toml
 # pyproject.toml
@@ -30,101 +82,111 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
-### Azure DevOps Build Pipeline
+## Ansible Deployment Setup
 
-Create an `azure-pipelines.yml` for the build:
+### Inventory File
+
+Create `inventory.yml` defining your Raspberry Pis:
 
 ```yaml
-trigger:
-  - main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.11'
-
-- script: |
-    pip install uv
-    uv venv
-    source .venv/bin/activate
-    uv pip install -e .
-  displayName: 'Install dependencies with uv'
-
-- script: |
-    uv pip compile pyproject.toml -o requirements.lock
-  displayName: 'Generate lockfile'
-
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)'
-    includeRootFolder: false
-    archiveType: 'tar'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/app-$(Build.BuildId).tar.gz'
-    excludePaths: |
-      .venv
-      .git
-      __pycache__
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'python-app'
+all:
+  children:
+    pis:
+      hosts:
+        raspberrypi-1.tail12345.ts.net:
+        raspberrypi-2.tail12345.ts.net:
+        raspberrypi-3.tail12345.ts.net:
+      vars:
+        ansible_user: pi
+        ansible_python_interpreter: /usr/bin/python3
 ```
 
-## The Deployment Process
+### Deployment Playbook
 
-### Raspberry Pi Setup
+Create `deploy.yml` - the automation script:
 
-Install uv on each Pi:
+```yaml
+---
+- name: Deploy Python Application to Raspberry Pis
+  hosts: pis
+  become: yes
+  vars:
+    app_name: data-acquisition
+    app_dir: /opt/{{ app_name }}
+    app_user: pi
 
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+  tasks:
+    - name: Install uv on Raspberry Pi
+      shell: curl -LsSf https://astral.sh/uv/install.sh | sh
+      args:
+        creates: /home/{{ app_user }}/.cargo/bin/uv
+      become_user: "{{ app_user }}"
+
+    - name: Ensure application directory exists
+      file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: '0755'
+
+    - name: Copy application files
+      synchronize:
+        src: ./
+        dest: "{{ app_dir }}/"
+        delete: yes
+        rsync_opts:
+          - "--exclude=.venv"
+          - "--exclude=.git"
+          - "--exclude=__pycache__"
+          - "--exclude=*.pyc"
+
+    - name: Create virtual environment with uv
+      shell: |
+        export PATH="/home/{{ app_user }}/.cargo/bin:$PATH"
+        uv venv {{ app_dir }}/.venv
+      args:
+        creates: "{{ app_dir }}/.venv"
+      become_user: "{{ app_user }}"
+
+    - name: Install dependencies with uv
+      shell: |
+        export PATH="/home/{{ app_user }}/.cargo/bin:$PATH"
+        source {{ app_dir }}/.venv/bin/activate
+        uv pip install -e .
+      args:
+        chdir: "{{ app_dir }}"
+      become_user: "{{ app_user }}"
+
+    - name: Create systemd service file
+      template:
+        src: data-acquisition.service.j2
+        dest: /etc/systemd/system/{{ app_name }}.service
+        mode: '0644'
+      notify:
+        - Reload systemd
+        - Restart application
+
+    - name: Enable and start service
+      systemd:
+        name: "{{ app_name }}"
+        enabled: yes
+        state: started
+
+  handlers:
+    - name: Reload systemd
+      systemd:
+        daemon_reload: yes
+
+    - name: Restart application
+      systemd:
+        name: "{{ app_name }}"
+        state: restarted
 ```
 
-### Automated Deployment Script
+### Systemd Service Template
 
-Create `deploy.sh` for deployment automation:
-
-```bash
-#!/bin/bash
-set -e
-
-APP_NAME="data-acquisition"
-DEPLOY_DIR="/opt/${APP_NAME}"
-ARTIFACT_URL="${1}"
-
-# Download and extract artefact
-mkdir -p /tmp/${APP_NAME}
-cd /tmp/${APP_NAME}
-curl -L "${ARTIFACT_URL}" -o app.tar.gz
-tar -xzf app.tar.gz
-
-# Stop existing service
-sudo systemctl stop ${APP_NAME} || true
-
-# Deploy new version
-sudo rm -rf ${DEPLOY_DIR}
-sudo mkdir -p ${DEPLOY_DIR}
-sudo cp -r . ${DEPLOY_DIR}/
-
-# Install dependencies in isolated environment
-cd ${DEPLOY_DIR}
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.lock
-
-# Start service
-sudo systemctl daemon-reload
-sudo systemctl start ${APP_NAME}
-sudo systemctl status ${APP_NAME}
-```
-
-### Systemd Service Configuration
-
-Create `/etc/systemd/system/data-acquisition.service`:
+Create `data-acquisition.service.j2`:
 
 ```ini
 [Unit]
@@ -133,9 +195,9 @@ After=network.target
 
 [Service]
 Type=simple
-User=pi
-WorkingDirectory=/opt/data-acquisition
-ExecStart=/opt/data-acquisition/.venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port 8000
+User={{ app_user }}
+WorkingDirectory={{ app_dir }}
+ExecStart={{ app_dir }}/.venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port 8000
 Restart=always
 RestartSec=10
 
@@ -143,40 +205,36 @@ RestartSec=10
 WantedBy=multi-user.target
 ```
 
-### Azure DevOps Release Pipeline
+## Deploying Your Application
 
-Configure a release pipeline with these stages:
+From your WSL terminal in your project directory:
 
-1. **Download Build Artefact** - Get the tar.gz from the build pipeline
-2. **Deploy to Dev Pi** - Test deployment on development Pi
-3. **Deploy to Production Pis** - Parallel deployment to multiple Pis
+```bash
+# Deploy to all Pis
+ansible-playbook -i inventory.yml deploy.yml
 
-Use Azure DevOps SSH task or Ansible for deployment orchestration:
+# Deploy to specific Pi
+ansible-playbook -i inventory.yml deploy.yml --limit raspberrypi-1.tail12345.ts.net
 
-```yaml
-# Sample release task
-- task: SSH@0
-  inputs:
-    sshEndpoint: 'raspberry-pi-connection'
-    runOptions: 'inline'
-    inline: |
-      bash deploy.sh $(ArtifactDownloadUrl)
+# Check what would change (dry run)
+ansible-playbook -i inventory.yml deploy.yml --check
 ```
 
 ## Key Benefits
 
-- **Build once, deploy anywhere** - Single artefact deployed to all Pis
-- **Dependency consistency** - `requirements.lock` ensures identical versions
-- **Fast installs** - uv's speed reduces deployment time
-- **Rollback capability** - Keep previous artefacts for quick rollbacks
-- **Zero-downtime updates** - Systemd restarts handle transitions
+- **Secure by default** - Tailscale provides encrypted connectivity without exposing ports
+- **Simple network setup** - No port forwarding or VPN configuration required
+- **Consistent deployments** - Ansible ensures identical configuration across all Pis
+- **Fast installs** - uv's speed reduces deployment time significantly
+- **Idempotent** - Run playbook multiple times safely; Ansible only makes necessary changes
+- **Windows-friendly** - Develop on Windows, deploy via WSL seamlessly
 
 ## Challenges To Solve
 
-- [ ] Test deployment script on actual Raspberry Pi hardware
-- [ ] Configure SSH credentials in Azure DevOps
-- [ ] Implement health checks post-deployment
-- [ ] Add deployment notifications (Slack/Teams)
-- [ ] Handle rolling deployments across Pi fleet
+- [ ] Test deployment on actual Raspberry Pi hardware
+- [ ] Add deployment health checks and validation
+- [ ] Implement rolling deployments with zero downtime
+- [ ] Add logging and monitoring configuration
+- [ ] Create rollback playbook for quick recovery
 
 *[Will update with actual deployment experiences]*
