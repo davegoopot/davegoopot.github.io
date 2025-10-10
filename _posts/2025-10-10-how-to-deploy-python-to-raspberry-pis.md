@@ -5,7 +5,7 @@ categories: python
 tags: python, raspberry-pi, uv, pyproject.toml, ansible, tailscale, deployment, automation
 ---
 
-We build Python projects for data acquisition units running on Raspberry Pis. We need clear separation of build and release processes: develop on Windows, then use Ansible over Tailscale to deploy to multiple Pis securely without complex network configuration.
+At work we build Python projects for data acquisition units running on Raspberry Pis. We want clear separation of build and release processes. We also develop on Windows. Here's how we use Ansible over Tailscale to deploy to multiple Pis.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ wsl --install
 Install Ansible in WSL:
 
 ```bash
-# In WSL terminal (Ubuntu)
+# In WSL terminal (Debian)
 sudo apt update
 sudo apt install python3 python3-pip ansible -y
 ```
