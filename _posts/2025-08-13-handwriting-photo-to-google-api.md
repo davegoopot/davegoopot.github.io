@@ -59,11 +59,26 @@ if __name__ == '__main__':
 
 ## Results
 
-*[Placeholder for actual test results]*
+**Update October 2025:** It works brilliantly! Google Vision API successfully recognised handwritten text from a mobile photo.
+
+### Testing on Android
+
+Got the entire workflow running on Android mobile using Termux:
+
+1. Set up Google Vision API with service account credentials
+2. Transferred credentials securely via Tailscale
+3. Ran the Python script directly on the phone
+4. Recognition accuracy was excellent
+
+### Example Test
+
+Tested with a hand-drawn workflow diagram showing the process: handwritten note → Google Vision API → GitHub. The API accurately recognised the handwritten text, including the word "GitHub" written in casual handwriting.
+
+See the [complete working code on GitHub](https://github.com/davegoopot/gvision-text/blob/main/extract_handwriting.py).
 
 **How did it perform?**
-- [ ] Text accuracy: 
-- [ ] Setup simplicity: 
-- [ ] API response time: 
+- [x] Text accuracy: Excellent - recognised handwritten notes accurately
+- [x] Setup simplicity: Straightforward once grpcio installation sorted
+- [x] API response time: Fast enough for real-time use
 
-*[Will update after testing with real handwriting samples]*
+The [gvision-text repository](https://github.com/davegoopot/gvision-text) contains the full working implementation and setup instructions.
