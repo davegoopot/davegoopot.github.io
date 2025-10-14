@@ -18,7 +18,7 @@ The entire workflow runs on Android mobile using Termux:
 
 ## Example Test
 
-Tested with a hand-drawn workflow diagram showing the process: paper → Google Vision API → GitHub. The API accurately recognised the handwritten text, including the word "GitHub" written in casual handwriting.
+Tested with a hand-drawn workflow diagram showing the process: paper → Google Vision API → GitHub. The API accurately recognised the handwritten text written in casual handwriting.
 
 ## Results
 
