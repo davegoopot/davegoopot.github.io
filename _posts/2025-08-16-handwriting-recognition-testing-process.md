@@ -47,3 +47,7 @@ Compare services on:
 - Open-source alternatives (Tesseract, PaddleOCR)
 
 Results and detailed comparisons to follow in subsequent posts.
+
+## Update: October 2025
+
+Google Vision API worked so well on the first attempt that I'm not going to test any others. See [Google Vision Handwriting Recognition Works!](/mobile/2025/10/14/google-vision-handwriting-recognition-works.html) for details on the successful implementation.
