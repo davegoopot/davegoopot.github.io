@@ -7,6 +7,6 @@ title: "Dave Potts - Software"
     {% for post in site.posts %}
         <h1 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
         <p>{{ post.date | date: "%B %d, %Y" }}</p>
-        <p>{{ post.content | strip_html | truncatewords: 150 }}</p>
+        <div>{{ post.content | truncatewords: 150 }}</div>
     {% endfor %}
 
