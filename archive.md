@@ -6,6 +6,8 @@ permalink: /archive/index.html
 
 <h1>Archive</h1>
 
+<p><a href="/archive/original.html">Original Archive</a></p>
+
 <ul class="archive-list">
     {% for post in site.posts %}
         <li>
