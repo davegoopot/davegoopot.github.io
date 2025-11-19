@@ -5,11 +5,12 @@ categories: development
 tags: copier, project-templates, best-practices, organisation
 ---
 
-Copier's documentation is generally clear and obvious, but there's one configuration property that deserves more prominence: [`_subdirectory`](https://copier.readthedocs.io/en/stable/configuring/#subdirectory).
+Copier's getting started documentation doesn't mention the `_subdirectory` setting, but you need if you're going to have a template in a repo that you then want to apply to multiple projects. See:
+ [`_subdirectory`](https://copier.readthedocs.io/en/stable/configuring/#subdirectory).
 
 ## The Problem
 
-By default, Copier expects template files to live in the repository root alongside configuration files like `copier.yml`, README, and other repository metadata. This quickly becomes messy as your template grows.
+By default, Copier expects template files to live in the repository root alongside configuration files like `copier.yml`, README, and other repository metadata. This quickly becomes confusing, especially accidentally copying the `.git` folder from the template.
 
 ## The Solution
 
@@ -32,12 +33,7 @@ my-copier-template/
     └── README.md
 ```
 
-## Why This Matters
-
-- **Clarity**: Immediate distinction between repository files and template files
-- **Maintenance**: Easier to navigate and modify templates
-- **Professional**: Cleaner repository structure for users browsing your template
 
 ## Further Reading
 
-The Copier maintainers [recommend this approach](https://github.com/orgs/copier-org/discussions/2383) for keeping templates organised. The official documentation covers [additional `_subdirectory` use cases](https://copier.readthedocs.io/en/stable/configuring/#subdirectory) including monorepo scenarios.
+The Copier maintainers [recommend this approach](https://github.com/orgs/copier-org/discussions/2383) for keeping templates organised. The official documentation covers [additional `_subdirectory` use cases](https://copier.readthedocs.io/en/stable/configuring/#subdirectory).
