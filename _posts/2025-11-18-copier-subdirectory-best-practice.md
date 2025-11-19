@@ -5,7 +5,7 @@ categories: development
 tags: copier, project-templates, best-practices, organisation
 ---
 
-Copier's getting started documentation doesn't mention the `_subdirectory` setting, but you need if you're going to have a template in a repo that you then want to apply to multiple projects. See:
+Copier's getting started documentation doesn't mention the `_subdirectory` setting, but you need it if you're going to have a template in a repo that you then want to apply to multiple projects. See:
  [`_subdirectory`](https://copier.readthedocs.io/en/stable/configuring/#subdirectory).
 
 ## The Problem
