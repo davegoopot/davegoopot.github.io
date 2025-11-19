@@ -18,3 +18,7 @@ Install Rust, `pkg install rust` then let pip build pydantic-core from source.
 
 The build takes approximately 10 minutes. Let it run in the Termux window without interruption.
 
+## A Better Solution
+
+Use [uv with the Termux PyPI repository](/mobile/2025/11/19/termux-uv-pypi-configuration.html) which provides precompiled wheels. This avoids the need to build from source and is significantly faster.
+
