@@ -5,11 +5,13 @@ categories: mobile
 tags: termux, python, uv, pypi, android, package-management
 ---
 
-Configuring uv in Termux to use the Termux-specific PyPI index.
+I wish I'd found the Termux-specific PyPI index sooner. This PyPI has wheels pre-compiled to run under Termux.
+
+Here's how to set it up as the default under Termux.
 
 ## The Configuration File Location
 
-In Termux, uv follows standard Linux XDG configuration paths. The configuration file should be at:
+In Termux, uv looks for the configuration file at:
 
 ```
 ~/.config/uv/uv.toml
