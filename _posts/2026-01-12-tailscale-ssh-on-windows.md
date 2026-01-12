@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tailscale SSH On Windows"
+title: "Tailscale SSH on Windows"
 categories: infrastructure
 tags: tailscale, ssh, windows, authentication, automation
 ---
