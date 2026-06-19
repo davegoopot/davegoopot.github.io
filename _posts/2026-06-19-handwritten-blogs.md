@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Handwritten Blogs"
+title: "Authenticity and Handwritten Blogs"
 categories: development
 tags: handwriting, blog, image
 ---
