@@ -518,4 +518,13 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
         word-wrap: break-word;
         overflow-x: auto;
     }
+
+    /* Fix for issue #155: Make images on homepage responsive on mobile */
+    .articles-list img,
+    #featured img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 }
